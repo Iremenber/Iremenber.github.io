@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>插入图片练习 | 土块一个的博客</title>
+  <title>java-stream流 | 土块一个的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="网络图片插入">
+  <meta name="description" content="stream流分为3部分 分别为开源流(.stream())、过滤流(.fliter(lambda表达式的方程式接口))、结尾(forEach())  Stream流常见生成方式1234567891011121314151617181920public class StreamDemo &amp;#123;    public static void main(String[] args)&amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="插入图片练习">
-<meta property="og:url" content="http://example.com/2022/07/23/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%BB%83%E4%B9%A0/index.html">
+<meta property="og:title" content="java-stream流">
+<meta property="og:url" content="http://example.com/2022/08/03/java-stream%E6%B5%81/index.html">
 <meta property="og:site_name" content="土块一个的博客">
-<meta property="og:description" content="网络图片插入">
+<meta property="og:description" content="stream流分为3部分 分别为开源流(.stream())、过滤流(.fliter(lambda表达式的方程式接口))、结尾(forEach())  Stream流常见生成方式1234567891011121314151617181920public class StreamDemo &amp;#123;    public static void main(String[] args)&amp;#123;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/themes/yilia/source/img/avatar.jpg">
-<meta property="article:published_time" content="2022-07-23T02:28:34.000Z">
-<meta property="article:modified_time" content="2022-08-03T10:03:39.719Z">
+<meta property="article:published_time" content="2022-08-03T11:41:32.000Z">
+<meta property="article:modified_time" content="2022-08-03T16:19:48.016Z">
 <meta property="article:author" content="土块一个">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/themes/yilia/source/img/avatar.jpg">
   
     <link rel="alternative" href="/atom.xml" title="土块一个的博客" type="application/atom+xml">
   
@@ -159,20 +157,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-插入图片练习" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-java-stream流" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      插入图片练习
+      java-stream流
     </h1>
   
 
         
-        <a href="/2022/07/23/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%BB%83%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2022-07-23T02:28:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-23</time>
+        <a href="/2022/08/03/java-stream%E6%B5%81/" class="archive-article-date">
+  	<time datetime="2022-08-03T11:41:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
 </a>
 <span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
 
@@ -181,10 +179,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><h1 id="网络图片插入"><a href="#网络图片插入" class="headerlink" title="网络图片插入"></a><strong>网络图片插入</strong></h1><img src="/../../themes/yilia/source/img/avatar.jpg" alt="图片"></li>
-</ul>
-
+        <h1 id="stream流分为3部分"><a href="#stream流分为3部分" class="headerlink" title="stream流分为3部分"></a>stream流分为3部分</h1><blockquote>
+<p>分别为开源流(<code>.stream()</code>)、过滤流(<code>.fliter(lambda表达式的方程式接口)</code>)、结尾(<code>forEach()</code>)</p>
+</blockquote>
+<h2 id="Stream流常见生成方式"><a href="#Stream流常见生成方式" class="headerlink" title="Stream流常见生成方式"></a>Stream流常见生成方式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class StreamDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        //Colletion用默认stream()方法生成</span><br><span class="line">        List&lt;String&gt; list=new ArrayList&lt;String&gt;();</span><br><span class="line">        Stream&lt;String&gt; sl=list.stream();</span><br><span class="line"></span><br><span class="line">        Set&lt;String&gt; set=new HashSet&lt;&gt;();</span><br><span class="line">        Stream&lt;String&gt; ss=set.stream();</span><br><span class="line"></span><br><span class="line">        //Map体系间接生成流</span><br><span class="line">        Map&lt;String,Integer&gt; map=new HashMap&lt;String,Integer&gt;();</span><br><span class="line">        Stream&lt;String&gt; sms=map.keySet().stream();</span><br><span class="line">        Stream&lt;Integer&gt; smi=map.values().stream();</span><br><span class="line">        Stream&lt;Map.Entry&lt;String,Integer&gt;&gt; sm=map.entrySet().stream();</span><br><span class="line"></span><br><span class="line">        //数值用Stream接口的静态方法生成</span><br><span class="line">        String[] as=&#123;&quot;hello&quot;,&quot;world&quot;&#125;;</span><br><span class="line">        Stream&lt;String&gt; sss=Stream.of(as);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -263,7 +261,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/07/23/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%BB%83%E4%B9%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/03/java-stream%E6%B5%81/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,18 +275,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/07/23/test/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/08/04/Stream%E6%B5%81%E7%9A%84%E6%94%B6%E9%9B%86%E6%93%8D%E4%BD%9C/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          test
+          Stream流的收集操作
         
       </div>
     </a>
   
   
-    <a href="/2022/07/19/MarkDown%E7%9A%84%E8%AF%AD%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">MarkDown的语法</div>
+    <a href="/2022/08/03/java-%E5%9B%9B%E5%A4%A7%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java-四大函数式接口</div>
       <i class="icon-circle-right"></i>
     </a>
   
