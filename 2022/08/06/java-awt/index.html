@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | 土块一个的博客</title>
+  <title>java-awt | 土块一个的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="土块一个的博客">
-<meta property="og:url" content="http://example.com/archives/2022/page/2/index.html">
+  <meta name="description" content="awt的常见布局(layout) FlowLayout() 从左往右，从上往下排列;  123456789101112import java.awt.*;public class FlowlayoutDemo &amp;#123;    public static void main(String[] args)&amp;#123;        Frame f&#x3D;new Frame();        f.set">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java-awt">
+<meta property="og:url" content="http://example.com/2022/08/06/java-awt/index.html">
 <meta property="og:site_name" content="土块一个的博客">
+<meta property="og:description" content="awt的常见布局(layout) FlowLayout() 从左往右，从上往下排列;  123456789101112import java.awt.*;public class FlowlayoutDemo &amp;#123;    public static void main(String[] args)&amp;#123;        Frame f&#x3D;new Frame();        f.set">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-06T06:06:44.000Z">
+<meta property="article:modified_time" content="2022-08-06T12:36:39.530Z">
 <meta property="article:author" content="土块一个">
 <meta name="twitter:card" content="summary">
   
@@ -153,141 +157,182 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-java-awt" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java-awt
+    </h1>
+  
+
+        
+        <a href="/2022/08/06/java-awt/" class="archive-article-date">
+  	<time datetime="2022-08-06T06:06:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-06</time>
+</a>
+<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="awt的常见布局-layout"><a href="#awt的常见布局-layout" class="headerlink" title="awt的常见布局(layout)"></a>awt的常见布局(layout)</h1><ol>
+<li><strong><code>FlowLayout()</code></strong><blockquote>
+<p>从左往右，从上往下排列;</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;</span><br><span class="line">public class FlowlayoutDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame();</span><br><span class="line">        f.setLayout(new FlowLayout(FlowLayout.LEFT,20,20));</span><br><span class="line">        for(int i=0;i&lt;100;i++)&#123;</span><br><span class="line">            f.add(new Button(&quot;按钮&quot;+ i));</span><br><span class="line">        &#125;</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.<strong><code>BorderLayout()</code></strong></p>
+<blockquote>
+<p>指定是布局在北边(<code>BorderLayout.NORTH</code>)南边(<code>BorderLayout.SOUTH</code>),东边(<code>BorderLayout.EAST</code>),西边(<code>BorderLayout.WEST</code>),中间(<code>BorderLayout.CENTER</code>)</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;</span><br><span class="line"></span><br><span class="line">public class BorderLayoutDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame(&quot;这是一个Borderlayout&quot;);</span><br><span class="line">        f.setLayout(new BorderLayout(30,10));</span><br><span class="line">        f.add(new Button(&quot;北按钮&quot;),BorderLayout.NORTH);</span><br><span class="line">        f.add(new Button(&quot;南按钮&quot;),BorderLayout.SOUTH);</span><br><span class="line">        f.add(new Button(&quot;西按钮&quot;),BorderLayout.WEST);</span><br><span class="line">        f.add(new Button(&quot;东按钮&quot;),BorderLayout.EAST);</span><br><span class="line">        f.add(new Button(&quot;中间按钮&quot;),BorderLayout.CENTER);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.<strong><code>GridLayout()</code></strong></p>
+<blockquote>
+<p>网格布局</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;</span><br><span class="line">public class GridLayoutDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame(&quot;实现计算器布局&quot;);</span><br><span class="line">        Panel p1=new Panel();</span><br><span class="line">        p1.add(new TextField(30));</span><br><span class="line">        f.add(p1,BorderLayout.NORTH);</span><br><span class="line">        Panel p2=new Panel(new GridLayout(3,5,4,4));</span><br><span class="line">        for(int i=0;i&lt;10;i++)&#123;</span><br><span class="line">            p2.add(new Button(String.valueOf(i)));</span><br><span class="line">        &#125;</span><br><span class="line">        p2.add(new Button(&quot;+&quot;));</span><br><span class="line">        p2.add(new Button(&quot;-&quot;));</span><br><span class="line">        p2.add(new Button(&quot;*&quot;));</span><br><span class="line">        p2.add(new Button(&quot;/&quot;));</span><br><span class="line">        p2.add(new Button(&quot;%&quot;));</span><br><span class="line">        f.add(p2);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.<strong><code>CardLayout()</code></strong></p>
+<blockquote>
+<p>像卡片一样布局，所以即便添加了多个组件，也只会展现一个组件。通过<code>previous()</code>、<code>next()</code>等方法来进行组件展示的切换</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;</span><br><span class="line">import java.awt.event.ActionEvent;</span><br><span class="line">import java.awt.event.ActionListener;</span><br><span class="line"></span><br><span class="line">public class CardLayoutAndBindDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame(&quot;这是CardLayout和事件绑定&quot;);</span><br><span class="line">        Panel p1=new Panel();</span><br><span class="line">        CardLayout c=new CardLayout();</span><br><span class="line">        p1.setLayout(c);</span><br><span class="line">        String[] name=&#123;&quot;第一张&quot;,&quot;第二张&quot;,&quot;第三张&quot;,&quot;第四张&quot;,&quot;第五张&quot;&#125;;</span><br><span class="line">        for(int i=0;i&lt;5;i++)&#123;</span><br><span class="line">            p1.add(name[i],new Button(name[i]));</span><br><span class="line">        &#125;</span><br><span class="line">        f.add(p1);</span><br><span class="line">        Panel p2=new Panel();</span><br><span class="line">        Button b1=new Button(&quot;上一张&quot;);</span><br><span class="line">        Button b2=new Button(&quot;下一张&quot;);</span><br><span class="line">        Button b3=new Button(&quot;第一张&quot;);</span><br><span class="line">        Button b4=new Button(&quot;最后一张&quot;);</span><br><span class="line">        Button b5=new Button(&quot;第三张&quot;);</span><br><span class="line">        ActionListener al=new ActionListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line">                String ac=e.getActionCommand();</span><br><span class="line">                switch(ac)&#123;</span><br><span class="line">                    case &quot;上一张&quot;:c.previous(p1);break;</span><br><span class="line">                    case &quot;下一张&quot;:c.next(p1);break;</span><br><span class="line">                    case &quot;第一张&quot;:c.first(p1);break;</span><br><span class="line">                    case &quot;最后一张&quot;:c.last(p1);break;</span><br><span class="line">                    case &quot;第三张&quot;:c.show(p1,&quot;第三张&quot;);break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        b1.addActionListener(al);</span><br><span class="line">        b2.addActionListener(al);</span><br><span class="line">        b3.addActionListener(al);</span><br><span class="line">        b4.addActionListener(al);</span><br><span class="line">        b5.addActionListener(al);</span><br><span class="line">        p2.add(b1);</span><br><span class="line">        p2.add(b2);</span><br><span class="line">        p2.add(b3);</span><br><span class="line">        p2.add(b4);</span><br><span class="line">        p2.add(b5);</span><br><span class="line">        f.add(p2,BorderLayout.SOUTH);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5.<strong><code>BoxLayout()</code></strong></p>
+<blockquote>
+<p>可以实现盒子摆放，在这个盒子里有上下布局，也有左右布局</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import javax.swing.*;</span><br><span class="line">import java.awt.*;</span><br><span class="line">public class BoxLayoutDemo2 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame();</span><br><span class="line">        Box hbox= Box.createHorizontalBox();</span><br><span class="line">        hbox.add(new Button(&quot;button1&quot;));</span><br><span class="line">        hbox.add(Box.createHorizontalGlue());</span><br><span class="line">        hbox.add(new Button(&quot;button2&quot;));</span><br><span class="line">        Box vbox=Box.createVerticalBox();</span><br><span class="line">        vbox.add(new Button(&quot;button3&quot;));</span><br><span class="line">        vbox.add(Box.createVerticalStrut(40));</span><br><span class="line">        vbox.add(new Button(&quot;button4&quot;));</span><br><span class="line">        f.add(hbox,BorderLayout.NORTH);</span><br><span class="line">        f.add(vbox);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/23/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%BB%83%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2022-07-23T02:28:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-23</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+      
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/23/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%BB%83%E4%B9%A0/">插入图片练习</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/06/java-awt/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/19/MarkDown%E7%9A%84%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2022-07-19T09:00:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-19</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2022/08/06/java-%E5%8F%8D%E5%B0%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java-反射</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/19/MarkDown%E7%9A%84%E8%AF%AD%E6%B3%95/">MarkDown的语法</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2022-07-14T16:51:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-15</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/15/hello-world/" class="archive-article-date">
-  	<time datetime="2022-07-14T16:45:24.972Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-15</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/15/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2022/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2022/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -321,8 +366,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

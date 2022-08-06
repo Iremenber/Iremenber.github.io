@@ -60,7 +60,7 @@
 			</ul>
 		</nav>
 		<nav>
-   			 总文章数 13
+   			 总文章数 14
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -155,6 +155,96 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-java-awt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/06/java-awt/">java-awt</a>
+    </h1>
+  
+
+        
+        <a href="/2022/08/06/java-awt/" class="archive-article-date">
+  	<time datetime="2022-08-06T06:06:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-06</time>
+</a>
+<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="awt的常见布局-layout"><a href="#awt的常见布局-layout" class="headerlink" title="awt的常见布局(layout)"></a>awt的常见布局(layout)</h1><ol>
+<li><strong><code>FlowLayout()</code></strong><blockquote>
+<p>从左往右，从上往下排列;</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;</span><br><span class="line">public class FlowlayoutDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame();</span><br><span class="line">        f.setLayout(new FlowLayout(FlowLayout.LEFT,20,20));</span><br><span class="line">        for(int i=0;i&lt;100;i++)&#123;</span><br><span class="line">            f.add(new Button(&quot;按钮&quot;+ i));</span><br><span class="line">        &#125;</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.<strong><code>BorderLayout()</code></strong></p>
+<blockquote>
+<p>指定是布局在北边(<code>BorderLayout.NORTH</code>)南边(<code>BorderLayout.SOUTH</code>),东边(<code>BorderLayout.EAST</code>),西边(<code>BorderLayout.WEST</code>),中间(<code>BorderLayout.CENTER</code>)</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;</span><br><span class="line"></span><br><span class="line">public class BorderLayoutDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame(&quot;这是一个Borderlayout&quot;);</span><br><span class="line">        f.setLayout(new BorderLayout(30,10));</span><br><span class="line">        f.add(new Button(&quot;北按钮&quot;),BorderLayout.NORTH);</span><br><span class="line">        f.add(new Button(&quot;南按钮&quot;),BorderLayout.SOUTH);</span><br><span class="line">        f.add(new Button(&quot;西按钮&quot;),BorderLayout.WEST);</span><br><span class="line">        f.add(new Button(&quot;东按钮&quot;),BorderLayout.EAST);</span><br><span class="line">        f.add(new Button(&quot;中间按钮&quot;),BorderLayout.CENTER);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3.<strong><code>GridLayout()</code></strong></p>
+<blockquote>
+<p>网格布局</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;</span><br><span class="line">public class GridLayoutDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame(&quot;实现计算器布局&quot;);</span><br><span class="line">        Panel p1=new Panel();</span><br><span class="line">        p1.add(new TextField(30));</span><br><span class="line">        f.add(p1,BorderLayout.NORTH);</span><br><span class="line">        Panel p2=new Panel(new GridLayout(3,5,4,4));</span><br><span class="line">        for(int i=0;i&lt;10;i++)&#123;</span><br><span class="line">            p2.add(new Button(String.valueOf(i)));</span><br><span class="line">        &#125;</span><br><span class="line">        p2.add(new Button(&quot;+&quot;));</span><br><span class="line">        p2.add(new Button(&quot;-&quot;));</span><br><span class="line">        p2.add(new Button(&quot;*&quot;));</span><br><span class="line">        p2.add(new Button(&quot;/&quot;));</span><br><span class="line">        p2.add(new Button(&quot;%&quot;));</span><br><span class="line">        f.add(p2);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4.<strong><code>CardLayout()</code></strong></p>
+<blockquote>
+<p>像卡片一样布局，所以即便添加了多个组件，也只会展现一个组件。通过<code>previous()</code>、<code>next()</code>等方法来进行组件展示的切换</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;</span><br><span class="line">import java.awt.event.ActionEvent;</span><br><span class="line">import java.awt.event.ActionListener;</span><br><span class="line"></span><br><span class="line">public class CardLayoutAndBindDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame(&quot;这是CardLayout和事件绑定&quot;);</span><br><span class="line">        Panel p1=new Panel();</span><br><span class="line">        CardLayout c=new CardLayout();</span><br><span class="line">        p1.setLayout(c);</span><br><span class="line">        String[] name=&#123;&quot;第一张&quot;,&quot;第二张&quot;,&quot;第三张&quot;,&quot;第四张&quot;,&quot;第五张&quot;&#125;;</span><br><span class="line">        for(int i=0;i&lt;5;i++)&#123;</span><br><span class="line">            p1.add(name[i],new Button(name[i]));</span><br><span class="line">        &#125;</span><br><span class="line">        f.add(p1);</span><br><span class="line">        Panel p2=new Panel();</span><br><span class="line">        Button b1=new Button(&quot;上一张&quot;);</span><br><span class="line">        Button b2=new Button(&quot;下一张&quot;);</span><br><span class="line">        Button b3=new Button(&quot;第一张&quot;);</span><br><span class="line">        Button b4=new Button(&quot;最后一张&quot;);</span><br><span class="line">        Button b5=new Button(&quot;第三张&quot;);</span><br><span class="line">        ActionListener al=new ActionListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line">                String ac=e.getActionCommand();</span><br><span class="line">                switch(ac)&#123;</span><br><span class="line">                    case &quot;上一张&quot;:c.previous(p1);break;</span><br><span class="line">                    case &quot;下一张&quot;:c.next(p1);break;</span><br><span class="line">                    case &quot;第一张&quot;:c.first(p1);break;</span><br><span class="line">                    case &quot;最后一张&quot;:c.last(p1);break;</span><br><span class="line">                    case &quot;第三张&quot;:c.show(p1,&quot;第三张&quot;);break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        b1.addActionListener(al);</span><br><span class="line">        b2.addActionListener(al);</span><br><span class="line">        b3.addActionListener(al);</span><br><span class="line">        b4.addActionListener(al);</span><br><span class="line">        b5.addActionListener(al);</span><br><span class="line">        p2.add(b1);</span><br><span class="line">        p2.add(b2);</span><br><span class="line">        p2.add(b3);</span><br><span class="line">        p2.add(b4);</span><br><span class="line">        p2.add(b5);</span><br><span class="line">        f.add(p2,BorderLayout.SOUTH);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5.<strong><code>BoxLayout()</code></strong></p>
+<blockquote>
+<p>可以实现盒子摆放，在这个盒子里有上下布局，也有左右布局</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import javax.swing.*;</span><br><span class="line">import java.awt.*;</span><br><span class="line">public class BoxLayoutDemo2 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame();</span><br><span class="line">        Box hbox= Box.createHorizontalBox();</span><br><span class="line">        hbox.add(new Button(&quot;button1&quot;));</span><br><span class="line">        hbox.add(Box.createHorizontalGlue());</span><br><span class="line">        hbox.add(new Button(&quot;button2&quot;));</span><br><span class="line">        Box vbox=Box.createVerticalBox();</span><br><span class="line">        vbox.add(new Button(&quot;button3&quot;));</span><br><span class="line">        vbox.add(Box.createVerticalStrut(40));</span><br><span class="line">        vbox.add(new Button(&quot;button4&quot;));</span><br><span class="line">        f.add(hbox,BorderLayout.NORTH);</span><br><span class="line">        f.add(vbox);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/06/java-awt/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-java-反射" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -190,7 +280,24 @@
 <p>类似</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import java.lang.reflect.InvocationTargetException;</span><br><span class="line">import java.lang.reflect.Method;</span><br><span class="line">public class MemberMethodDemo &#123;</span><br><span class="line">    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException &#123;</span><br><span class="line">        Class&lt;?&gt; c=Class.forName(&quot;ReflectDemo.Student&quot;);</span><br><span class="line">        Method[] m=c.getDeclaredMethods();//getDeclaredMethods()将为继承的类的成员方法都列举出来，getMethods()是将公有方法列举出来</span><br><span class="line">        for(Method me:m)&#123;</span><br><span class="line">            System.out.println(me);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;-----------&quot;);</span><br><span class="line">        Method method=c.getDeclaredMethod(&quot;getName&quot;);</span><br><span class="line">        Object obj=c.getConstructor().newInstance();</span><br><span class="line">        method.setAccessible(true);//取消访问检测，使得私有成员方法也能反射</span><br><span class="line">        method.invoke(obj);//Object invoke(Object obj, Object... args) </span><br><span class="line">        //在具有指定参数的 方法对象上调用此 方法对象表示的底层方法。</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><strong>通过包装反射来使用，仅仅修改Class.txt来达到使用不同类方法的效果</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import java.io.File;</span><br><span class="line">import java.io.FileNotFoundException;</span><br><span class="line">import java.io.FileReader;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.lang.reflect.Constructor;</span><br><span class="line">import java.lang.reflect.InvocationTargetException;</span><br><span class="line">import java.lang.reflect.Method;</span><br><span class="line">import java.util.Properties;</span><br><span class="line">public class PackUpRefDemo &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException &#123;</span><br><span class="line">        Properties p=new Properties();</span><br><span class="line">        FileReader fr=new FileReader(&quot;D:\\Ideacode\\Try\\src\\ReflectDemo\\Class.txt&quot;);</span><br><span class="line">        p.load(fr);</span><br><span class="line">        fr.close();</span><br><span class="line">        //System.out.println(p.getProperty(&quot;classname&quot;));</span><br><span class="line">        String classname=p.getProperty(&quot;classname&quot;);</span><br><span class="line">        //System.out.println(classname);</span><br><span class="line">        String method=p.getProperty(&quot;method&quot;);</span><br><span class="line">        Class&lt;?&gt; c=Class.forName(classname);</span><br><span class="line">        Constructor&lt;?&gt; con=c.getConstructor();</span><br><span class="line">        Object obj=con.newInstance();</span><br><span class="line">        Method m=c.getMethod(method);</span><br><span class="line">        m.invoke(obj);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Class.txt文件内容：</p>
+<blockquote>
+<p>classname&#x3D;ReflectDemo.Student<br>method&#x3D;study</p>
+</blockquote>
+</blockquote>
+</li>
 </ol>
+<blockquote>
+<p>而Student类和Teacher类分别有study和teach方法</p>
+</blockquote>
+<blockquote>
+<p><code>public void study()&#123;         System.out.println(&quot;好好学习天天向上&quot;);     &#125;</code></p>
+</blockquote>
+<blockquote>
+<p><code>public void teach()&#123;         System.out.println(&quot;立德树人&quot;);     &#125;    </code></p>
+</blockquote>
 
       
 
@@ -777,73 +884,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/07/23/test/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-插入图片练习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/07/23/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%BB%83%E4%B9%A0/">插入图片练习</a>
-    </h1>
-  
-
-        
-        <a href="/2022/07/23/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%BB%83%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2022-07-23T02:28:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-23</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><h1 id="网络图片插入"><a href="#网络图片插入" class="headerlink" title="网络图片插入"></a><strong>网络图片插入</strong></h1><img src="/../../themes/yilia/source/img/avatar.jpg" alt="图片"></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/07/23/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%BB%83%E4%B9%A0/">展开全文 >></a>
         </p>
       
 
