@@ -60,7 +60,7 @@
 			</ul>
 		</nav>
 		<nav>
-   			 总文章数 14
+   			 总文章数 17
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -154,6 +154,272 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-java-事件和事件监听器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/07/java-%E4%BA%8B%E4%BB%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%99%A8/">java-事件和事件监听器</a>
+    </h1>
+  
+
+        
+        <a href="/2022/08/07/java-%E4%BA%8B%E4%BB%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%99%A8/" class="archive-article-date">
+  	<time datetime="2022-08-07T04:28:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-07</time>
+</a>
+<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##基础事件</p>
+<table>
+<thead>
+<tr>
+<th><strong>事件</strong></th>
+<th><strong>触发时机</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ComponentEvent</td>
+<td>组件事件，当组件尺寸发生变化、位置发生移动、显示&#x2F;隐藏状态发生改变时触发该事件。</td>
+</tr>
+<tr>
+<td>ContainerEvent</td>
+<td>容器事件，当容器里发生添加组件、删除组件时触发该事件。</td>
+</tr>
+<tr>
+<td>WindowEvent</td>
+<td>窗口事件，当窗口状态发生改变(如打开、关闭、最大化、最小化)时触发该事件。</td>
+</tr>
+<tr>
+<td>FocusEvent</td>
+<td>焦点事件，当组件得到焦点或失去焦点时触发该事件。</td>
+</tr>
+<tr>
+<td>KeyEvent</td>
+<td>键盘事件，当按键被按下、松开、单击时触发该事件</td>
+</tr>
+<tr>
+<td>MouseEvent</td>
+<td>鼠标事件，当进行单击、按下、松开、移动鼠标等动作时触发该事件。</td>
+</tr>
+<tr>
+<td>PaintEvent</td>
+<td>法来呈现自身时触发该事件，该事件并非专用于事件处理模型。</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th><strong>高级事件</strong></th>
+<th><strong>触发时机</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ActionEvent</td>
+<td>动作事件当按钮、菜单项被单击，在TextField 中按Enter键时触发</td>
+</tr>
+<tr>
+<td>AjustmentEvent</td>
+<td>调节事件，在滑动条上移动滑块以调节数值时融发该事件。</td>
+</tr>
+<tr>
+<td>ltemEvent</td>
+<td>选项事件，当用户选中某项，或取消选中集项时触发i该事件.。</td>
+</tr>
+<tr>
+<td>TextEvent</td>
+<td>文本事件，当文本框、文本域里的文本发生改变时触发该事件。</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">import javax.swing.*;</span><br><span class="line">import java.awt.*;</span><br><span class="line">import java.awt.event.*;</span><br><span class="line">public class ListenerDemo1 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame();</span><br><span class="line">        Box b= Box.createHorizontalBox();</span><br><span class="line">        Choice c=new Choice();</span><br><span class="line">        c.add(&quot;1&quot;);</span><br><span class="line">        c.add(&quot;2&quot;);</span><br><span class="line">        c.add(&quot;3&quot;);</span><br><span class="line">        TextField tf=new TextField(30);</span><br><span class="line">        b.add(c);</span><br><span class="line">        b.add(tf);</span><br><span class="line">        f.add(b);</span><br><span class="line">        tf.addTextListener(new TextListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void textValueChanged(TextEvent e) &#123;</span><br><span class="line">                String tfs=tf.getText();</span><br><span class="line">                System.out.println(tfs);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        c.addItemListener(new ItemListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void itemStateChanged(ItemEvent e) &#123;</span><br><span class="line">                System.out.println(e.getItem());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        f.addContainerListener(new ContainerListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void componentAdded(ContainerEvent e) &#123;</span><br><span class="line">                System.out.println(e.getChild());</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            @Override</span><br><span class="line">            public void componentRemoved(ContainerEvent e) &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用WindowListener来设置能关闭程序"><a href="#使用WindowListener来设置能关闭程序" class="headerlink" title="使用WindowListener来设置能关闭程序"></a>使用WindowListener来设置能关闭程序</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;</span><br><span class="line">import java.awt.event.WindowAdapter;</span><br><span class="line">import java.awt.event.WindowEvent;</span><br><span class="line">public class WindowsListenerDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame();</span><br><span class="line">        f.addWindowListener(new WindowAdapter() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void windowClosing(WindowEvent e) &#123;</span><br><span class="line">                //super.windowClosing(e);</span><br><span class="line">                System.exit(0);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/07/java-%E4%BA%8B%E4%BB%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%99%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-java-高级组件1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/07/java-%E9%AB%98%E7%BA%A7%E7%BB%84%E4%BB%B61/">java-高级组件1</a>
+    </h1>
+  
+
+        
+        <a href="/2022/08/07/java-%E9%AB%98%E7%BA%A7%E7%BB%84%E4%BB%B61/" class="archive-article-date">
+  	<time datetime="2022-08-06T16:31:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-07</time>
+</a>
+<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Dialog"><a href="#Dialog" class="headerlink" title="Dialog()"></a><code>Dialog()</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;</span><br><span class="line">import java.awt.event.ActionEvent;</span><br><span class="line">import java.awt.event.ActionListener;</span><br><span class="line"></span><br><span class="line">public class DialogDemo1 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame(&quot;这里测试Dialog&quot;);</span><br><span class="line">        Dialog d1=new Dialog(f,&quot;对话框1&quot;,true);</span><br><span class="line">        Dialog d2=new Dialog(f,&quot;对话框2&quot;,false);</span><br><span class="line">        Button b1=new Button(&quot;按钮1&quot;);</span><br><span class="line">        Button b2=new Button(&quot;按钮2&quot;);</span><br><span class="line">        b1.addActionListener(new ActionListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line">                d1.setVisible(true);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        b2.addActionListener(new ActionListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line">                d2.setVisible(true);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        f.add(b1,BorderLayout.NORTH);</span><br><span class="line">        f.add(b2,BorderLayout.SOUTH);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="FileDialog"><a href="#FileDialog" class="headerlink" title="FileDialog()"></a><code>FileDialog()</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">import javax.swing.*;</span><br><span class="line">import java.awt.*;</span><br><span class="line">import java.awt.event.ActionEvent;</span><br><span class="line">import java.awt.event.ActionListener;</span><br><span class="line"></span><br><span class="line">public class FileDialogDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame(&quot;FileDialog测试&quot;);</span><br><span class="line">        FileDialog f1=new FileDialog(f,&quot;选择文件&quot;,FileDialog.LOAD);</span><br><span class="line">        FileDialog f2=new FileDialog(f,&quot;保存文件&quot;,FileDialog.SAVE);</span><br><span class="line">        Button b1=new Button(&quot;选择文件&quot;);</span><br><span class="line">        Button b2=new Button(&quot;保存文件&quot;);</span><br><span class="line">        b1.addActionListener(new ActionListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line">                f1.setVisible(true);</span><br><span class="line">                String directory=f1.getDirectory();</span><br><span class="line">                String file=f1.getFile();</span><br><span class="line">                System.out.println(&quot;文件路径：&quot;+directory);</span><br><span class="line">                System.out.println(&quot;文件名:&quot;+file);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        b2.addActionListener(new ActionListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line">                f2.setVisible(true);</span><br><span class="line">                String path=f2.getDirectory();</span><br><span class="line">                String name=f2.getFile();</span><br><span class="line">                System.out.println(path);</span><br><span class="line">                System.out.println(name);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        Box b=Box.createVerticalBox();</span><br><span class="line">        b.setBounds(100,100,20,20);</span><br><span class="line">        b.add(b1);</span><br><span class="line">        b.add(b2);</span><br><span class="line">        f.add(b);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/07/java-%E9%AB%98%E7%BA%A7%E7%BB%84%E4%BB%B61/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-java-awt-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/06/java-awt-1/">java-awt-1</a>
+    </h1>
+  
+
+        
+        <a href="/2022/08/06/java-awt-1/" class="archive-article-date">
+  	<time datetime="2022-08-06T15:59:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-06</time>
+</a>
+<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="基础组件"><a href="#基础组件" class="headerlink" title="基础组件"></a>基础组件</h1><ul>
+<li><code>TextArea</code></li>
+<li><code>Choice</code></li>
+<li><code>Checkbox</code></li>
+<li><code>TextField</code></li>
+<li><code>Button</code></li>
+<li><code>List</code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">import javax.swing.*;</span><br><span class="line">import java.awt.*;</span><br><span class="line"></span><br><span class="line">public class BasicComponentDemo &#123;</span><br><span class="line">    Frame f=new Frame(&quot;基础组件测试&quot;);</span><br><span class="line">    TextArea ta=new TextArea(5,20);</span><br><span class="line">    Choice choice=new Choice();</span><br><span class="line">    CheckboxGroup cbg=new CheckboxGroup();</span><br><span class="line">    Checkbox male=new Checkbox(&quot;男性&quot;,cbg,true);</span><br><span class="line">    Checkbox female=new Checkbox(&quot;女性&quot;,cbg,false);</span><br><span class="line">    Checkbox ismerried=new Checkbox(&quot;是否已婚？&quot;);</span><br><span class="line">    TextField tf=new TextField(60);</span><br><span class="line">    Button button=new Button(&quot;确认&quot;);</span><br><span class="line">    List list=new List(6,true);</span><br><span class="line">    public void init()&#123;</span><br><span class="line">        Box bbox=Box.createHorizontalBox();</span><br><span class="line">        bbox.add(tf);</span><br><span class="line">        bbox.add(button);</span><br><span class="line"></span><br><span class="line">        Box cbox=Box.createHorizontalBox();</span><br><span class="line">        choice.add(&quot;1&quot;);</span><br><span class="line">        choice.add(&quot;2&quot;);</span><br><span class="line">        choice.add(&quot;3&quot;);</span><br><span class="line">        cbox.add(choice);</span><br><span class="line">        cbox.add(male);</span><br><span class="line">        cbox.add(female);</span><br><span class="line">        cbox.add(ismerried);</span><br><span class="line"></span><br><span class="line">        Box lbox=Box.createVerticalBox();</span><br><span class="line">        lbox.add(ta);</span><br><span class="line">        lbox.add(cbox);</span><br><span class="line"></span><br><span class="line">        Box top=Box.createHorizontalBox();</span><br><span class="line">        top.add(lbox);</span><br><span class="line">        list.add(&quot;red&quot;);</span><br><span class="line">        list.add(&quot;green&quot;);</span><br><span class="line">        list.add(&quot;blue&quot;);</span><br><span class="line">        top.add(list);</span><br><span class="line"></span><br><span class="line">        Box all=Box.createVerticalBox();</span><br><span class="line">        all.add(top);</span><br><span class="line">        all.add(bbox);</span><br><span class="line"></span><br><span class="line">        f.add(all);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        BasicComponentDemo b=new BasicComponentDemo();</span><br><span class="line">        b.init();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/06/java-awt-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-java-awt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -680,210 +946,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/08/02/java-TCP-%E6%8C%81%E7%BB%AD%E8%BE%93%E5%85%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java-TCP-Client与Server" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/02/java-TCP-Client%E4%B8%8EServer/">java-TCP-Client与Server</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/02/java-TCP-Client%E4%B8%8EServer/" class="archive-article-date">
-  	<time datetime="2022-08-02T07:41:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-02</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="TCP练习一"><a href="#TCP练习一" class="headerlink" title="TCP练习一"></a>TCP练习一</h2><p><strong>ServerDemo</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class ServerDemo &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        ServerSocket ss=new ServerSocket(1000);</span><br><span class="line">        Socket s=ss.accept();</span><br><span class="line">        InputStream is=s.getInputStream();</span><br><span class="line">        byte[] bys=new byte[1024];</span><br><span class="line">        int len=is.read(bys);</span><br><span class="line">        String data=new String(bys,0,len);</span><br><span class="line">        System.out.println(&quot;服务器:&quot;+data);</span><br><span class="line">        OutputStream os=s.getOutputStream();</span><br><span class="line">        os.write(&quot;数据已经收到&quot;.getBytes());</span><br><span class="line">        s.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p><em>ClientDemo</em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class ClientDemo &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        Socket s=new Socket(&quot;192.168.1.2&quot;,1000);</span><br><span class="line">        OutputStream os=s.getOutputStream();</span><br><span class="line">        os.write(&quot;hello,tcp,我来辣&quot;.getBytes());</span><br><span class="line">        InputStream is=s.getInputStream();</span><br><span class="line">        byte[] bys=new byte[1024];</span><br><span class="line">        int len=is.read(bys);</span><br><span class="line">        String data=new String(bys,0,len);</span><br><span class="line">        System.out.println(&quot;客户端：&quot;+data);</span><br><span class="line">        s.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/02/java-TCP-Client%E4%B8%8EServer/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java基础1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/02/java%E5%9F%BA%E7%A1%801/">java基础1</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/02/java%E5%9F%BA%E7%A1%801/" class="archive-article-date">
-  	<time datetime="2022-08-02T07:05:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-02</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><ul>
-<li>HashMap&lt;Object,Object&gt;</li>
-<li>TreeSet<Object></Object></li>
-<li>ArrayList<Object></Object></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/02/java%E5%9F%BA%E7%A1%801/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/07/23/test/">test</a>
-    </h1>
-  
-
-        
-        <a href="/2022/07/23/test/" class="archive-article-date">
-  	<time datetime="2022-07-23T03:55:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-23</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/.com//1.png"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/07/23/test/">展开全文 >></a>
         </p>
       
 

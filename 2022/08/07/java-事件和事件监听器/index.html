@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | 土块一个的博客</title>
+  <title>java-事件和事件监听器 | 土块一个的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="土块一个的博客">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="##基础事件    事件 触发时机    ComponentEvent 组件事件，当组件尺寸发生变化、位置发生移动、显示&#x2F;隐藏状态发生改变时触发该事件。   ContainerEvent 容器事件，当容器里发生添加组件、删除组件时触发该事件。   WindowEvent 窗口事件，当窗口状态发生改变(如打开、关闭、最大化、最小化)时触发该事件。   FocusEvent 焦点事件，当组件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java-事件和事件监听器">
+<meta property="og:url" content="http://example.com/2022/08/07/java-%E4%BA%8B%E4%BB%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%99%A8/index.html">
 <meta property="og:site_name" content="土块一个的博客">
+<meta property="og:description" content="##基础事件    事件 触发时机    ComponentEvent 组件事件，当组件尺寸发生变化、位置发生移动、显示&#x2F;隐藏状态发生改变时触发该事件。   ContainerEvent 容器事件，当容器里发生添加组件、删除组件时触发该事件。   WindowEvent 窗口事件，当窗口状态发生改变(如打开、关闭、最大化、最小化)时触发该事件。   FocusEvent 焦点事件，当组件">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-07T04:28:23.000Z">
+<meta property="article:modified_time" content="2022-08-07T05:48:31.146Z">
 <meta property="article:author" content="土块一个">
 <meta name="twitter:card" content="summary">
   
@@ -153,315 +157,218 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-java-事件和事件监听器" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      java-事件和事件监听器
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/07/java-%E4%BA%8B%E4%BB%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%99%A8/" class="archive-article-date">
+
+        
+        <a href="/2022/08/07/java-%E4%BA%8B%E4%BB%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%99%A8/" class="archive-article-date">
   	<time datetime="2022-08-07T04:28:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-07</time>
 </a>
 <span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/07/java-%E4%BA%8B%E4%BB%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%99%A8/">java-事件和事件监听器</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##基础事件</p>
+<table>
+<thead>
+<tr>
+<th><strong>事件</strong></th>
+<th><strong>触发时机</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ComponentEvent</td>
+<td>组件事件，当组件尺寸发生变化、位置发生移动、显示&#x2F;隐藏状态发生改变时触发该事件。</td>
+</tr>
+<tr>
+<td>ContainerEvent</td>
+<td>容器事件，当容器里发生添加组件、删除组件时触发该事件。</td>
+</tr>
+<tr>
+<td>WindowEvent</td>
+<td>窗口事件，当窗口状态发生改变(如打开、关闭、最大化、最小化)时触发该事件。</td>
+</tr>
+<tr>
+<td>FocusEvent</td>
+<td>焦点事件，当组件得到焦点或失去焦点时触发该事件。</td>
+</tr>
+<tr>
+<td>KeyEvent</td>
+<td>键盘事件，当按键被按下、松开、单击时触发该事件</td>
+</tr>
+<tr>
+<td>MouseEvent</td>
+<td>鼠标事件，当进行单击、按下、松开、移动鼠标等动作时触发该事件。</td>
+</tr>
+<tr>
+<td>PaintEvent</td>
+<td>法来呈现自身时触发该事件，该事件并非专用于事件处理模型。</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th><strong>高级事件</strong></th>
+<th><strong>触发时机</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ActionEvent</td>
+<td>动作事件当按钮、菜单项被单击，在TextField 中按Enter键时触发</td>
+</tr>
+<tr>
+<td>AjustmentEvent</td>
+<td>调节事件，在滑动条上移动滑块以调节数值时融发该事件。</td>
+</tr>
+<tr>
+<td>ltemEvent</td>
+<td>选项事件，当用户选中某项，或取消选中集项时触发i该事件.。</td>
+</tr>
+<tr>
+<td>TextEvent</td>
+<td>文本事件，当文本框、文本域里的文本发生改变时触发该事件。</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">import javax.swing.*;</span><br><span class="line">import java.awt.*;</span><br><span class="line">import java.awt.event.*;</span><br><span class="line">public class ListenerDemo1 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame();</span><br><span class="line">        Box b= Box.createHorizontalBox();</span><br><span class="line">        Choice c=new Choice();</span><br><span class="line">        c.add(&quot;1&quot;);</span><br><span class="line">        c.add(&quot;2&quot;);</span><br><span class="line">        c.add(&quot;3&quot;);</span><br><span class="line">        TextField tf=new TextField(30);</span><br><span class="line">        b.add(c);</span><br><span class="line">        b.add(tf);</span><br><span class="line">        f.add(b);</span><br><span class="line">        tf.addTextListener(new TextListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void textValueChanged(TextEvent e) &#123;</span><br><span class="line">                String tfs=tf.getText();</span><br><span class="line">                System.out.println(tfs);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        c.addItemListener(new ItemListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void itemStateChanged(ItemEvent e) &#123;</span><br><span class="line">                System.out.println(e.getItem());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        f.addContainerListener(new ContainerListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void componentAdded(ContainerEvent e) &#123;</span><br><span class="line">                System.out.println(e.getChild());</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            @Override</span><br><span class="line">            public void componentRemoved(ContainerEvent e) &#123;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用WindowListener来设置能关闭程序"><a href="#使用WindowListener来设置能关闭程序" class="headerlink" title="使用WindowListener来设置能关闭程序"></a>使用WindowListener来设置能关闭程序</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;</span><br><span class="line">import java.awt.event.WindowAdapter;</span><br><span class="line">import java.awt.event.WindowEvent;</span><br><span class="line">public class WindowsListenerDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame();</span><br><span class="line">        f.addWindowListener(new WindowAdapter() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void windowClosing(WindowEvent e) &#123;</span><br><span class="line">                //super.windowClosing(e);</span><br><span class="line">                System.exit(0);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/07/java-%E4%BA%8B%E4%BB%B6%E5%92%8C%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E5%99%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/07/java-%E9%AB%98%E7%BA%A7%E7%BB%84%E4%BB%B61/" class="archive-article-date">
-  	<time datetime="2022-08-06T16:31:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-07</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2022/08/07/java-%E9%AB%98%E7%BA%A7%E7%BB%84%E4%BB%B61/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java-高级组件1</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/07/java-%E9%AB%98%E7%BA%A7%E7%BB%84%E4%BB%B61/">java-高级组件1</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/06/java-awt-1/" class="archive-article-date">
-  	<time datetime="2022-08-06T15:59:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-06</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/06/java-awt-1/">java-awt-1</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/06/java-awt/" class="archive-article-date">
-  	<time datetime="2022-08-06T06:06:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-06</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/06/java-awt/">java-awt</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/06/java-%E5%8F%8D%E5%B0%84/" class="archive-article-date">
-  	<time datetime="2022-08-05T16:02:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-06</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/06/java-%E5%8F%8D%E5%B0%84/">java-反射</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/04/Stream%E6%B5%81%E7%9A%84%E6%94%B6%E9%9B%86%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2022-08-03T16:16:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-04</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/04/Stream%E6%B5%81%E7%9A%84%E6%94%B6%E9%9B%86%E6%93%8D%E4%BD%9C/">Stream流的收集操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/03/java-stream%E6%B5%81/" class="archive-article-date">
-  	<time datetime="2022-08-03T11:41:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/03/java-stream%E6%B5%81/">java-stream流</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/03/java-%E5%9B%9B%E5%A4%A7%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2022-08-03T10:14:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/03/java-%E5%9B%9B%E5%A4%A7%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/">java-四大函数式接口</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/03/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-08-02T16:56:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/03/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">lambda表达式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/02/java-TCP-%E6%8C%81%E7%BB%AD%E8%BE%93%E5%85%A5/" class="archive-article-date">
-  	<time datetime="2022-08-02T08:02:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-02</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/02/java-TCP-%E6%8C%81%E7%BB%AD%E8%BE%93%E5%85%A5/">java-TCP-持续输入</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -495,8 +402,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
