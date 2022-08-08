@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | 土块一个的博客</title>
+  <title>java-Swing-组装视图 | 土块一个的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="土块一个的博客">
-<meta property="og:url" content="http://example.com/archives/page/2/index.html">
+  <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java-Swing-组装视图">
+<meta property="og:url" content="http://example.com/2022/08/08/java-Swing-%E7%BB%84%E8%A3%85%E8%A7%86%E5%9B%BE/index.html">
 <meta property="og:site_name" content="土块一个的博客">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-08T06:42:56.000Z">
+<meta property="article:modified_time" content="2022-08-08T06:43:23.215Z">
 <meta property="article:author" content="土块一个">
 <meta name="twitter:card" content="summary">
   
@@ -153,315 +157,156 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-java-Swing-组装视图" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java-Swing-组装视图
+    </h1>
+  
+
+        
+        <a href="/2022/08/08/java-Swing-%E7%BB%84%E8%A3%85%E8%A7%86%E5%9B%BE/" class="archive-article-date">
+  	<time datetime="2022-08-08T06:42:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-08</time>
+</a>
+<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br></pre></td><td class="code"><pre><span class="line">package GUISwing;</span><br><span class="line"></span><br><span class="line">import com.sun.org.apache.bcel.internal.generic.IXOR;</span><br><span class="line"></span><br><span class="line">import javax.swing.*;</span><br><span class="line">import java.awt.*;</span><br><span class="line">import java.awt.event.ActionEvent;</span><br><span class="line">import java.awt.event.ActionListener;</span><br><span class="line"></span><br><span class="line">public class SwingComponentDemo &#123;</span><br><span class="line">    JFrame jf=new JFrame(&quot;测试Swing基本组件&quot;);</span><br><span class="line">    //声明菜单相关的组件</span><br><span class="line">    JMenuBar jmb=new JMenuBar();</span><br><span class="line">    JMenu filemenu=new JMenu(&quot;文件&quot;);</span><br><span class="line">    JMenu editmenu=new JMenu(&quot;编辑&quot;);</span><br><span class="line">    JMenuItem auto=new JMenuItem(&quot;自动换行&quot;);</span><br><span class="line">    JMenuItem copy=new JMenuItem(&quot;复制&quot;);</span><br><span class="line">    JMenuItem paste=new JMenuItem(&quot;粘贴&quot;);</span><br><span class="line">    JMenu form=new JMenu(&quot;格式&quot;);</span><br><span class="line">    JMenuItem comment=new JMenuItem(&quot;注释&quot;);</span><br><span class="line">    JMenuItem cancelcomment=new JMenuItem(&quot;取消注释&quot;);</span><br><span class="line"></span><br><span class="line">    //声明文本域</span><br><span class="line">    JTextArea jta=new JTextArea(2,20);</span><br><span class="line"></span><br><span class="line">    //列表框</span><br><span class="line">    JList&lt;String&gt; colorlist=new JList&lt;String&gt;(new String[]&#123;&quot;红色&quot;,&quot;绿色&quot;,&quot;蓝色&quot;&#125;);</span><br><span class="line"></span><br><span class="line">    //选择相关组件</span><br><span class="line">    JComboBox&lt;String&gt; colorselect=new JComboBox&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">    ButtonGroup bg=new ButtonGroup();</span><br><span class="line">    JRadioButton male=new JRadioButton(&quot;男&quot;,false);</span><br><span class="line">    JRadioButton female=new JRadioButton(&quot;女&quot;,true);</span><br><span class="line"></span><br><span class="line">    JCheckBox jcb=new JCheckBox(&quot;是否已婚&quot;,true);</span><br><span class="line"></span><br><span class="line">    //声明底部</span><br><span class="line">    JTextField jtf=new JTextField(40);</span><br><span class="line">    JButton jb=new JButton(&quot;确定&quot;,new ImageIcon(&quot;&quot;));</span><br><span class="line"></span><br><span class="line">    //声明右键菜单</span><br><span class="line">    JPopupMenu jPopupMenu=new JPopupMenu();</span><br><span class="line"></span><br><span class="line">    ButtonGroup popupButton=new ButtonGroup();</span><br><span class="line"></span><br><span class="line">    JRadioButtonMenuItem metal=new JRadioButtonMenuItem(&quot;metal 风格&quot;);</span><br><span class="line">    JRadioButtonMenuItem nimbus=new JRadioButtonMenuItem(&quot;nimbus 风格&quot;);</span><br><span class="line">    JRadioButtonMenuItem windows=new JRadioButtonMenuItem(&quot;windows 风格&quot;,true);</span><br><span class="line">    JRadioButtonMenuItem windowsClassic=new JRadioButtonMenuItem(&quot;windowsClassic 风格&quot;);</span><br><span class="line">    JRadioButtonMenuItem motif=new JRadioButtonMenuItem(&quot;motif 风格&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    private void init()&#123;</span><br><span class="line">        //组装视图</span><br><span class="line"></span><br><span class="line">        //组装底部</span><br><span class="line">        JPanel jPanel=new JPanel();</span><br><span class="line">        jPanel.add(jtf);</span><br><span class="line">        jPanel.add(jb);</span><br><span class="line"></span><br><span class="line">        //jf.add(jPanel);</span><br><span class="line">        //组装选择相关组件</span><br><span class="line">        JPanel selectpanel=new JPanel();</span><br><span class="line">        colorselect.addItem(&quot;红色&quot;);</span><br><span class="line">        colorselect.addItem(&quot;绿色&quot;);</span><br><span class="line">        colorselect.addItem(&quot;蓝色&quot;);</span><br><span class="line">        selectpanel.add(colorselect);</span><br><span class="line">        selectpanel.add(male);</span><br><span class="line">        selectpanel.add(female);</span><br><span class="line">        selectpanel.add(jcb);</span><br><span class="line"></span><br><span class="line">        //组装文本域和选择相关组件</span><br><span class="line">        Box topleft=Box.createVerticalBox();</span><br><span class="line">        topleft.add(jta);</span><br><span class="line">        topleft.add(selectpanel);</span><br><span class="line"></span><br><span class="line">        //组装顶部</span><br><span class="line">        Box top=Box.createHorizontalBox();</span><br><span class="line">        top.add(topleft);</span><br><span class="line">        top.add(colorlist);</span><br><span class="line">        //组装上下</span><br><span class="line">        Box all=Box.createVerticalBox();</span><br><span class="line">        all.add(top);</span><br><span class="line">        all.add(jPanel);</span><br><span class="line">        jf.add(all);</span><br><span class="line"></span><br><span class="line">        //组装顶部菜单</span><br><span class="line">        form.add(comment);</span><br><span class="line">        form.add(cancelcomment);</span><br><span class="line"></span><br><span class="line">        editmenu.add(auto);</span><br><span class="line">        editmenu.addSeparator();</span><br><span class="line">        editmenu.add(copy);</span><br><span class="line">        editmenu.add(paste);</span><br><span class="line">        editmenu.addSeparator();</span><br><span class="line">        editmenu.add(form);</span><br><span class="line"></span><br><span class="line">        jmb.add(filemenu);</span><br><span class="line">        jmb.add(editmenu);</span><br><span class="line">        jf.setJMenuBar(jmb);</span><br><span class="line"></span><br><span class="line">        //组装右键菜单</span><br><span class="line">        popupButton.add(metal);</span><br><span class="line">        popupButton.add(nimbus);</span><br><span class="line">        popupButton.add(windows);</span><br><span class="line">        popupButton.add(windowsClassic);</span><br><span class="line">        popupButton.add(motif);</span><br><span class="line"></span><br><span class="line">        ActionListener actionListener=new ActionListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line">                try &#123;</span><br><span class="line">                    changeFlavor(e.getActionCommand());</span><br><span class="line">                &#125; catch (UnsupportedLookAndFeelException ex) &#123;</span><br><span class="line">                    ex.printStackTrace();</span><br><span class="line">                &#125; catch (ClassNotFoundException ex) &#123;</span><br><span class="line">                    ex.printStackTrace();</span><br><span class="line">                &#125; catch (InstantiationException ex) &#123;</span><br><span class="line">                    ex.printStackTrace();</span><br><span class="line">                &#125; catch (IllegalAccessException ex) &#123;</span><br><span class="line">                    ex.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        metal.addActionListener(actionListener);</span><br><span class="line">        nimbus.addActionListener(actionListener);</span><br><span class="line">        windows.addActionListener(actionListener);</span><br><span class="line">        windowsClassic.addActionListener(actionListener);</span><br><span class="line">        motif.addActionListener(actionListener);</span><br><span class="line"></span><br><span class="line">        jPopupMenu.add(metal);</span><br><span class="line">        jPopupMenu.add(nimbus);</span><br><span class="line">        jPopupMenu.add(windows);</span><br><span class="line">        jPopupMenu.add(windowsClassic);</span><br><span class="line">        jPopupMenu.add(motif);</span><br><span class="line"></span><br><span class="line">        //不需要监听鼠标事件</span><br><span class="line">        jta.setComponentPopupMenu(jPopupMenu);</span><br><span class="line">        //用来关闭</span><br><span class="line">        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br><span class="line">        jf.pack();</span><br><span class="line">        jf.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">//    &quot;metal 风格&quot;);</span><br><span class="line">//    JRadioButtonMenuItem nimbus=new JRadioButtonMenuItem(&quot;nimbus 风格&quot;);</span><br><span class="line">//    JRadioButtonMenuItem windows=new JRadioButtonMenuItem(&quot;windows 风格&quot;,true);</span><br><span class="line">//    JRadioButtonMenuItem windowsClassic=new JRadioButtonMenuItem(&quot;windowsClassic 风格&quot;);</span><br><span class="line">//    JRadioButtonMenuItem motif=new JRadioButtonMenuItem(&quot;motif 风格&quot;)</span><br><span class="line">    private void changeFlavor(String command) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException &#123;</span><br><span class="line">        switch (command)&#123;</span><br><span class="line">            case &quot;metal 风格&quot;:UIManager.setLookAndFeel(&quot;javax.swing.plaf.metal.MetalLookAndFeel&quot;);break;</span><br><span class="line">            case &quot;nimbus 风格&quot;:UIManager.setLookAndFeel(&quot;javax.swing.plaf.nimbus.NimbusLookAndFeel&quot;);break;</span><br><span class="line">            case &quot;windows 风格&quot;:UIManager.setLookAndFeel(&quot;com.sun.java.swing.plaf.windows.WindowsLookAndFeel&quot;);break;</span><br><span class="line">            case &quot;windowsClassic 风格&quot;:UIManager.setLookAndFeel(&quot;com.sun.java.swing.plaf.windows.WindowsLookAndFeel&quot;);break;</span><br><span class="line">            case &quot;motif 风格&quot;:UIManager.setLookAndFeel(&quot;com.sun.java.swing.plaf.motif.MotifLookAndFeel&quot;);break;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //刷新组件外观</span><br><span class="line">        SwingUtilities.updateComponentTreeUI(jf.getContentPane());</span><br><span class="line">        SwingUtilities.updateComponentTreeUI(jmb);</span><br><span class="line">        SwingUtilities.updateComponentTreeUI(jPopupMenu);</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        SwingComponentDemo scd=new SwingComponentDemo();</span><br><span class="line">        scd.init();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/03/java-stream%E6%B5%81/" class="archive-article-date">
-  	<time datetime="2022-08-03T11:41:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+      
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/03/java-stream%E6%B5%81/">java-stream流</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/08/java-Swing-%E7%BB%84%E8%A3%85%E8%A7%86%E5%9B%BE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/03/java-%E5%9B%9B%E5%A4%A7%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2022-08-03T10:14:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2022/08/08/java-%E5%BC%B9%E7%8F%A0%E5%BC%B9%E7%90%83%E6%B8%B8%E6%88%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java-弹珠弹球游戏</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/03/java-%E5%9B%9B%E5%A4%A7%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/">java-四大函数式接口</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/03/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-08-02T16:56:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/03/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">lambda表达式</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/02/java-TCP-%E6%8C%81%E7%BB%AD%E8%BE%93%E5%85%A5/" class="archive-article-date">
-  	<time datetime="2022-08-02T08:02:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-02</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/02/java-TCP-%E6%8C%81%E7%BB%AD%E8%BE%93%E5%85%A5/">java-TCP-持续输入</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/02/java-TCP-Client%E4%B8%8EServer/" class="archive-article-date">
-  	<time datetime="2022-08-02T07:41:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-02</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/02/java-TCP-Client%E4%B8%8EServer/">java-TCP-Client与Server</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/08/02/java%E5%9F%BA%E7%A1%801/" class="archive-article-date">
-  	<time datetime="2022-08-02T07:05:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-02</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/08/02/java%E5%9F%BA%E7%A1%801/">java基础1</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/23/test/" class="archive-article-date">
-  	<time datetime="2022-07-23T03:55:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-23</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/23/test/">test</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/23/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%BB%83%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2022-07-23T02:28:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-23</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/23/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%BB%83%E4%B9%A0/">插入图片练习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/19/MarkDown%E7%9A%84%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2022-07-19T09:00:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-19</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/19/MarkDown%E7%9A%84%E8%AF%AD%E6%B3%95/">MarkDown的语法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2022-07-14T16:51:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-15</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -495,8 +340,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
