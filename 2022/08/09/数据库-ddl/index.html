@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022/7 | 土块一个的博客</title>
+  <title>数据库-ddl | 土块一个的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="土块一个的博客">
-<meta property="og:url" content="http://example.com/archives/2022/07/index.html">
+  <meta name="description" content="ddl、dml和dml的操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库-ddl">
+<meta property="og:url" content="http://example.com/2022/08/09/%E6%95%B0%E6%8D%AE%E5%BA%93-ddl/index.html">
 <meta property="og:site_name" content="土块一个的博客">
+<meta property="og:description" content="ddl、dml和dml的操作">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-09T12:25:25.000Z">
+<meta property="article:modified_time" content="2022-08-09T15:22:45.257Z">
 <meta property="article:author" content="土块一个">
 <meta name="twitter:card" content="summary">
   
@@ -153,167 +157,204 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-数据库-ddl" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据库-ddl
+    </h1>
+  
+
+        
+        <a href="/2022/08/09/%E6%95%B0%E6%8D%AE%E5%BA%93-ddl/" class="archive-article-date">
+  	<time datetime="2022-08-09T12:25:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-09</time>
+</a>
+<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ddl、dml和dml的操作</p>
+<span id="more"></span>
+<h1 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h1><h3 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h3><ol>
+<li><code>Show Databases </code>:展现所有数据库</li>
+<li><code>Creata database db1</code>：创建名为db1的数据库</li>
+<li><code>drop database db1</code>:删除db1</li>
+<li><code>use db1</code>:使用db1</li>
+<li><code>select database()</code>:查看当前正在使用的数据库</li>
+</ol>
+<h3 id="操作表"><a href="#操作表" class="headerlink" title="操作表"></a>操作表</h3><p>1.<code>show tables</code>:展现表<br>2.<code>desc func</code>:查func表结构信息<br>3.<code>create table 表名(字段名 数据类型......)</code>:创建表<code>varchar()</code>是字符串<br>4.<code>drop table 表名</code>:<br>5.修改表</p>
+<blockquote>
+<p>1.<code>alter table 表名 rename to 新表名</code>：修改表名<br>2.<code>alter table 表名 add 列名 数据类型</code>：添加一列<br>3.<code>alter table 表名 modify 列名 新数据类型</code>：修改数据类型<br>4.<code>alter table 表名 change 列名 新列名 新数据类型</code>：修改列名和数据类型<br>5.<code>alter table 表名 drop 列名</code>：删除列<br>#DML<br><strong>添加数据</strong><br><code>INSERT INTO stu ( id, NAME, sex, birthday, score, email, tel, </code>status<code> ) VALUES     ( 2, &#39;李四&#39;, &#39;男&#39;, &#39;1999-11-11&#39;, 88.88, &#39;lisi@itcast.cn&#39;, &#39;1800028778&#39;, 1 );</code><br><strong>修改数据</strong><br><code>update stu set sex=&#39;女&#39; where name=&#39;张三&#39;;</code><br><strong>删除</strong><br><code>delete from stu where name=&#39;张三&#39;;</code></p>
+</blockquote>
+<p>#DQL<br><strong>基础查询</strong></p>
+<blockquote>
+<p>前提：<br>CREATE TABLE stu (<br>id int,<br>name varchar(20),<br>age int,<br>sex varchar(5),<br>address varchar(100),<br>math double(5,2),<br>english double(5,2),<br>hire_date date<br>);<br>–添加数据<br>INSERT INTO stu(id,NAME,age,sex,address,math,english,hire_date) VALUES<br>(1,’马运’,55,’男’,’杭州’,66,78,’1995-09-01’),<br>(2,’马花疼’,45, ‘女’,’深圳’,98,87,’1998-09-01’),<br>(3,’马斯克’,55, ‘男’,’香港’,56,77,’1999-09-02’),<br>(4,’柳白’,20, ‘女’,’湖南’,76,65,’1997-09-05’),<br>(5,’柳青’,20, ‘男’,’湖南’,86,null,’1998-09-01’),<br>(6, ‘刘德花’,57,’男’,’香港’,99,99,’1998-09-01’),<br>(7,’张学右’,22, ‘女’,’香港’,99, 99,’1998-09-01’),<br>(8,’德玛西亚’,18,’男’,’南京’,56,65,’1994-09-02’);</p>
+</blockquote>
+<p>– 查询 name age<br><code>select name,age from stu;</code></p>
+<p>– 查询所有列数据&#x2F;&#x2F;不使用!<br><code>select * from stu;</code></p>
+<p>– 去除重复记录<br><code>select distinct address from stu;</code></p>
+<p>– 查询姓名，数学成绩，英语成绩<br><code>select name,math as /*起别名*/ 数学成绩,english  英语成绩 from stu;</code></p>
+<p><strong>条件查询</strong><br>– 1.年龄大于二十<br><code>select * from stu where age&gt;20;</code><br><code>select * from stu where age&lt;&gt;20; -- 不等于20,!=也行</code></p>
+<p>– 2.年龄大于等于20且小于等于30<br><code>select * from stu where age&gt;= 20 and age &lt;=30;</code><br><code>select * from stu where age between 20 and 30;</code></p>
+<p>– 3.查询年龄等于18岁的学员信息<br><code>select *from stu where age = 18;</code></p>
+<p>– 3.查询年龄等于18或者20 或者22<br><code>select * from stu where age =18 or age = 20 or age =22;</code><br><code>select * from stu where age in (18,20,22);</code></p>
+<p>– 4.查询英语成绩为null<br><code>select * from stu where english is null;</code><br>– 5.英语成绩不为null<br><code>select * from stu where english is not null;</code></p>
+<p>– 6.查询姓马的学院<br><code>select * from stu where name like &#39;马%&#39;;</code></p>
+<p>– 7.查询第二字是花的<br><code>select * from stu where name like &#39;_花%&#39;;</code></p>
+<p>– 8. 查询包含德的<br><code>select * from stu where name like &#39;%德%&#39;;</code><br><strong>排序查询</strong><br>– 1.查询学生信息,按照年龄升序排列<br><code>select * from stu order by age asc;</code></p>
+<p>– 2.按照数学成绩降序排列<br><code>select * from stu order by math desc;</code></p>
+<p>– 3.按照数学成绩降序排列,如果一样，按照英语升序排列<br><code>select * from stu order by math desc, english asc;</code></p>
+<p><strong>分组查询</strong><br>聚合函数语法：<br><code>select 聚合函数名(列名) from 表</code><br>– 1.统计班级学生数量<br><code>select count(id) from stu;</code><br><code>select count(*) from stu;</code></p>
+<p>– 2.查询数学成绩最高分<br><code>select max(math) from stu;</code></p>
+<p>– 3.查询数学成绩最低分<br><code>select min(math) from stu;</code></p>
+<p>– 4.数学总分<br><code>select sum(math) from stu;</code></p>
+<p>– 5.查询数学成绩的平均分<br><code>select avg(math) from stu;</code></p>
+<p>– 6.查询英语成绩的最低分<br><code>select min(english)/*null不参与聚合函数*/ from stu;</code></p>
+<p>分组查询语法：<br><code>select 字段列表 from 表名 [where 分组前条件限定] group by 分组字段名 [having 分组后条件过滤];</code><br><u>执行顺序：where &gt; 聚合函数 &gt;having 所以having可以对聚合函数进行判断</u><br><mark><em>注意</em>：分组后,查询的字段为聚合函数和分组字段，查询其他字段无任何意义</mark></p>
+<p>– 1.查询男同学和女同学各自的数学平均分<br><code>select sex,avg(math)  from stu group by sex;</code></p>
+<p>– 2.男女各自数学平均分以及各自人数<br><code>select sex,avg(math),count(*) from stu group by sex;</code></p>
+<p>– 3.男女各自数学平均分以及各自人数,分数低于70分不参与分组<br><code>select sex,avg(math),count(*) from stu where math &gt; 70 group by sex;</code></p>
+<p>– 4.男女各自数学平均分以及各自人数,分数低于70分不参与分组,分组之后认识要大于2<br><code>select sex, avg(math),count(*) from stu where math &gt; 70 group by sex having count(*) &gt;2;</code></p>
+<p><strong>分页查询</strong><br>语法：<br><code>select 字段列表 from 表名 limit 起始索引 , 查询条目数;</code></p>
+<p>– 1.从0开始查询三条数据<br><code>select * from stu limit 0, 3;</code></p>
+<p>– 2.每页显示三条数据，查询第一页数据<br><code>select * from stu limit 0, 3;</code></p>
+<p>– 3.每页显示三条数据，查询第二页数据<br><code>select * from stu limit 3,3;</code></p>
+<p>– 4. 查询第四页<br><code>select * from stu limit 6,3;</code></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/23/test/" class="archive-article-date">
-  	<time datetime="2022-07-23T03:55:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-23</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+      
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/23/test/">test</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/09/%E6%95%B0%E6%8D%AE%E5%BA%93-ddl/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/23/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%BB%83%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2022-07-23T02:28:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-23</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2022/08/08/java-Swing-%E7%BB%84%E8%A3%85%E8%A7%86%E5%9B%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java-Swing-组装视图</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/23/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%BB%83%E4%B9%A0/">插入图片练习</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/19/MarkDown%E7%9A%84%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2022-07-19T09:00:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-19</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/19/MarkDown%E7%9A%84%E8%AF%AD%E6%B3%95/">MarkDown的语法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2022-07-14T16:51:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-15</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/07/15/hello-world/" class="archive-article-date">
-  	<time datetime="2022-07-14T16:45:24.972Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-15</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/07/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -346,8 +387,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

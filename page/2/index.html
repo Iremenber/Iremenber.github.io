@@ -60,7 +60,7 @@
 			</ul>
 		</nav>
 		<nav>
-   			 总文章数 21
+   			 总文章数 22
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -154,6 +154,73 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Stream流的收集操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/04/Stream%E6%B5%81%E7%9A%84%E6%94%B6%E9%9B%86%E6%93%8D%E4%BD%9C/">Stream流的收集操作</a>
+    </h1>
+  
+
+        
+        <a href="/2022/08/04/Stream%E6%B5%81%E7%9A%84%E6%94%B6%E9%9B%86%E6%93%8D%E4%BD%9C/" class="archive-article-date">
+  	<time datetime="2022-08-03T16:16:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-04</time>
+</a>
+<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Stream的收集"><a href="#Stream的收集" class="headerlink" title="Stream的收集"></a>Stream的收集</h1><blockquote>
+<p>通过Stream里的collect接口的Collectors.toList()来将流转换为列表,当然有<code>toSet()</code>,<code>toMap</code></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.stream.Collectors;</span><br><span class="line">import java.util.stream.Stream;</span><br><span class="line">public class StreamDemo5 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        List&lt;String&gt; list=new ArrayList&lt;String&gt;();</span><br><span class="line">        list.add(&quot;林青霄&quot;);</span><br><span class="line">        list.add(&quot;张曼玉&quot;);</span><br><span class="line">        list.add(&quot;张伟&quot;);</span><br><span class="line">        list.add(&quot;张三&quot;);</span><br><span class="line">        list.add(&quot;魏忠贤&quot;);</span><br><span class="line">        list.add(&quot;刘德华&quot;);</span><br><span class="line">        Stream&lt;String&gt; ss=list.stream().filter(s-&gt;s.length()==3);</span><br><span class="line">        List&lt;String&gt; ls=ss.collect(Collectors.toList());</span><br><span class="line">        for(String s:ls)&#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/04/Stream%E6%B5%81%E7%9A%84%E6%94%B6%E9%9B%86%E6%93%8D%E4%BD%9C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-java-stream流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -923,72 +990,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/07/19/MarkDown%E7%9A%84%E8%AF%AD%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/07/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        <a href="/2022/07/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2022-07-14T16:51:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-15</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这是我的博客</p>
-<h1 id="一些hexo命令"><a href="#一些hexo命令" class="headerlink" title="一些hexo命令"></a>一些hexo命令</h1><p><em>hexo g</em> :生成<br><em>hexo s</em> :开始服务<br><em>hexo d</em> :推送到github上<br><em>hexo n “***”</em> :创建一个名为***的md文件（hexo new）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/07/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
         </p>
       
 
