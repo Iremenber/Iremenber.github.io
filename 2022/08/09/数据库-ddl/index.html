@@ -16,7 +16,7 @@
 <meta property="og:description" content="ddl、dml和dml的操作">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-09T12:25:25.000Z">
-<meta property="article:modified_time" content="2022-08-09T15:22:45.257Z">
+<meta property="article:modified_time" content="2022-08-19T12:00:48.846Z">
 <meta property="article:author" content="土块一个">
 <meta name="twitter:card" content="summary">
   
@@ -64,7 +64,7 @@
 			</ul>
 		</nav>
 		<nav>
-   			 总文章数 27
+   			 总文章数 30
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -200,7 +200,7 @@
 <p>– 查询所有列数据&#x2F;&#x2F;不使用!<br><code>select * from stu;</code></p>
 <p>– 去除重复记录<br><code>select distinct address from stu;</code></p>
 <p>– 查询姓名，数学成绩，英语成绩<br><code>select name,math as /*起别名*/ 数学成绩,english  英语成绩 from stu;</code></p>
-<p><strong>条件查询</strong><br>– 1.年龄大于二十<br><code>select * from stu where age&gt;20;</code><br><code>select * from stu where age&lt;&gt;20; -- 不等于20,!=也行</code></p>
+<p><strong>条件查询（含模糊查询）</strong><br>– 1.年龄大于二十<br><code>select * from stu where age&gt;20;</code><br><code>select * from stu where age&lt;&gt;20; -- 不等于20,!=也行</code></p>
 <p>– 2.年龄大于等于20且小于等于30<br><code>select * from stu where age&gt;= 20 and age &lt;=30;</code><br><code>select * from stu where age between 20 and 30;</code></p>
 <p>– 3.查询年龄等于18岁的学员信息<br><code>select *from stu where age = 18;</code></p>
 <p>– 3.查询年龄等于18或者20 或者22<br><code>select * from stu where age =18 or age = 20 or age =22;</code><br><code>select * from stu where age in (18,20,22);</code></p>

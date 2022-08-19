@@ -6,17 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>java-四大函数式接口 | 土块一个的博客</title>
+  <title>HTML | 土块一个的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Supplier&lt;T&gt;方法：get() 1234567891011import java.util.Arrays;import java.util.function.Supplier;public class SupplierDemo &amp;#123;    public static void main(String[] args)&amp;#123;        System.out.pri">
-<meta property="og:type" content="article">
-<meta property="og:title" content="java-四大函数式接口">
-<meta property="og:url" content="http://example.com/2022/08/03/java-%E5%9B%9B%E5%A4%A7%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="HTML">
+<meta property="og:url" content="http://example.com/2022/08/19/HTML/index.html">
 <meta property="og:site_name" content="土块一个的博客">
-<meta property="og:description" content="Supplier&lt;T&gt;方法：get() 1234567891011import java.util.Arrays;import java.util.function.Supplier;public class SupplierDemo &amp;#123;    public static void main(String[] args)&amp;#123;        System.out.pri">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-03T10:14:04.000Z">
-<meta property="article:modified_time" content="2022-08-03T11:36:33.000Z">
+<meta property="article:published_time" content="2022-08-19T15:38:43.000Z">
+<meta property="article:modified_time" content="2022-08-19T15:38:43.029Z">
 <meta property="article:author" content="土块一个">
 <meta name="twitter:card" content="summary">
   
@@ -157,20 +155,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-java-四大函数式接口" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-HTML" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      java-四大函数式接口
+      HTML
     </h1>
   
 
         
-        <a href="/2022/08/03/java-%E5%9B%9B%E5%A4%A7%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2022-08-03T10:14:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
+        <a href="/2022/08/19/HTML/" class="archive-article-date">
+  	<time datetime="2022-08-19T15:38:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-19</time>
 </a>
 <span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
 
@@ -179,33 +177,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Supplier-lt-T-gt"><a href="#Supplier-lt-T-gt" class="headerlink" title="Supplier&lt;T&gt;"></a>Supplier&lt;T&gt;</h1><p><em>方法：<code>get()</code></em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.function.Supplier;</span><br><span class="line"></span><br><span class="line">public class SupplierDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        System.out.println(getString(()-&gt;&#123;return &quot;帅哥&quot;;&#125;));</span><br><span class="line">    &#125;</span><br><span class="line">    private static String getString(Supplier&lt;String&gt; s)&#123;</span><br><span class="line">        return s.get();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="Consumer-lt-T-gt"><a href="#Consumer-lt-T-gt" class="headerlink" title="Consumer&lt;T&gt;"></a>Consumer&lt;T&gt;</h1><p><strong>方法：</strong> </p>
-<ul>
-<li>void  <code>accept(T t)</code><br>对给定的参数执行此操作。  </li>
-<li>default   Consumer<T> <code>andThen(Consumer&lt;? super T&gt; after)</code><br>返回一个组合的 Consumer ，按顺序执行该操作，然后执行 after操作。  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.function.Consumer;</span><br><span class="line">public class ComsumerDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        opconsumer(&quot;林青霞&quot;,(s)-&gt;&#123;System.out.println(s);&#125;,(s)-&gt;&#123;</span><br><span class="line">            System.out.println(new StringBuilder(s).reverse().toString());</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    private static void opconsumer(String s, Consumer&lt;String&gt; c1,Consumer&lt;String&gt; c2)&#123;</span><br><span class="line">        c1.andThen(c2).accept(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class ConsumerDemo2 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        String[] s=&#123;&quot;喜羊羊,21&quot;,&quot;美丽哥,23&quot;&#125;;</span><br><span class="line">        Split(s,(ss)-&gt;&#123;</span><br><span class="line">            System.out.print(ss.split(&quot;,&quot;)[0]);</span><br><span class="line">        &#125;,(ss)-&gt;&#123;</span><br><span class="line">            System.out.println(&quot;,年龄是&quot;+ss.split(&quot;,&quot;)[1]);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    private static void Split(String[] s, Consumer&lt;String&gt; c1,Consumer&lt;String&gt; c2)&#123;</span><br><span class="line">        for(String ss:s)&#123;</span><br><span class="line">            c1.andThen(c2).accept(ss);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></T></li>
-</ul>
-<hr>
-<h1 id="Predicate-lt-T-gt"><a href="#Predicate-lt-T-gt" class="headerlink" title="Predicate&lt;T&gt;"></a>Predicate&lt;T&gt;</h1><p><del>方法：</del></p>
-<ul>
-<li>default Predicate<T> <code>and</code>(Predicate&lt;? super T&gt; other)<br>返回一个组合的谓词，表示该谓词与另一个谓词的短路逻辑AND。<br>static <T> Predicate<T> <code>isEqual</code>(Object targetRef)<br>返回根据 Objects.equals(Object, Object)测试两个参数是否相等的 谓词 。  </T></T></T></li>
-<li>default Predicate<T> <code>negate</code>()<br>返回表示此谓词的逻辑否定的谓词。  </T></li>
-<li>default Predicate<T> or(Predicate&lt;? super T&gt; other)<br>返回一个组合的谓词，表示该谓词与另一个谓词的短路逻辑或。  </T></li>
-<li>boolean <code>test</code>(T t)<br>在给定的参数上评估这个谓词。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import java.util.function.Predicate;</span><br><span class="line">public class PredicateDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        System.out.println(Pr(&quot;helloworld&quot;,(s)-&gt;&#123;return s.length()&gt;8;&#125;,(s)-&gt;&#123;return s.length()&lt;15;&#125;));</span><br><span class="line">    &#125;</span><br><span class="line">    private static Boolean Pr(String s, Predicate&lt;String&gt; p1,Predicate&lt;String&gt; p2)&#123;</span><br><span class="line">        return p1.and(p2).test(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="Function-lt-T-R-gt"><a href="#Function-lt-T-R-gt" class="headerlink" title="Function&lt;T,R&gt;"></a>Function&lt;T,R&gt;</h1><blockquote>
-<p>T - 函数输入的类型 R - 函数的结果类型 </p>
-</blockquote>
-<ul>
-<li>default <V> Function&lt;T,V&gt; <code>andThen</code>(Function&lt;? super R,? extends V&gt; after)<br>返回一个组合函数，首先将该函数应用于其输入，然后将 after函数应用于结果。  </V></li>
-<li>R <code>apply</code>(T t)<br>将此函数应用于给定的参数。  </li>
-<li>default <V> Function&lt;V,R&gt; <code>compose</code>(Function&lt;? super V,? extends T&gt; before)<br>返回一个组合函数，首先将 before函数应用于其输入，然后将此函数应用于结果。  </V></li>
-<li>static <T> Function&lt;T,T&gt; <code>identity</code>()<br>返回一个总是返回其输入参数的函数。  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import java.util.function.Function;</span><br><span class="line">public class FunctionDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Fun(&quot;100&quot;,s -&gt;&#123;return Integer.parseInt(s); &#125;,s-&gt;&#123;return String.valueOf(s+566);&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    private static void Fun(String s, Function&lt;String , Integer&gt; f1,Function&lt;Integer,String&gt; f2)&#123;</span><br><span class="line">        System.out.println(f1.andThen(f2).apply(s));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></T></li>
-</ul>
-
+        
       
 
       
@@ -284,7 +256,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/03/java-%E5%9B%9B%E5%A4%A7%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/19/HTML/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -298,18 +270,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/08/03/java-stream%E6%B5%81/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          java-stream流
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/08/03/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">lambda表达式</div>
+    <a href="/2022/08/18/MyBatis/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MyBatis</div>
       <i class="icon-circle-right"></i>
     </a>
   
