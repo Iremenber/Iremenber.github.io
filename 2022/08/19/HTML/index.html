@@ -8,13 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>HTML | 土块一个的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="HTML">
+<meta property="og:type" content="article">
 <meta property="og:title" content="HTML">
 <meta property="og:url" content="http://example.com/2022/08/19/HTML/index.html">
 <meta property="og:site_name" content="土块一个的博客">
+<meta property="og:description" content="HTML">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-19T15:38:43.000Z">
-<meta property="article:modified_time" content="2022-08-19T15:38:43.029Z">
+<meta property="article:modified_time" content="2022-08-20T05:36:35.838Z">
 <meta property="article:author" content="土块一个">
 <meta name="twitter:card" content="summary">
   
@@ -62,7 +64,7 @@
 			</ul>
 		</nav>
 		<nav>
-   			 总文章数 30
+   			 总文章数 31
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -177,7 +179,303 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><span id="more"></span>
+<p><strong>W3C标准</strong>：网页主要由三部分组成</p>
+<ul>
+<li>结构:html</li>
+<li>表现:css</li>
+<li>行为:JavaScript</li>
+</ul>
+<p><strong>基础标签</strong></p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;h1&gt; ~ &lt;h6&gt;</td>
+<td>定义标题，h1最大，h6最小</td>
+</tr>
+<tr>
+<td>&lt;font&gt;</td>
+<td>定义文本的字体、字体尺寸、字体颜色</td>
+</tr>
+<tr>
+<td>&lt;b&gt;</td>
+<td>定义粗体文本</td>
+</tr>
+<tr>
+<td>&lt;i&gt;</td>
+<td>定义斜体文本</td>
+</tr>
+<tr>
+<td>&lt;u&gt;</td>
+<td>定义文本下划线</td>
+</tr>
+<tr>
+<td>&lt;center&gt;</td>
+<td>定义文本居中</td>
+</tr>
+<tr>
+<td>&lt;p&gt;</td>
+<td>定义段落</td>
+</tr>
+<tr>
+<td>&lt;br&gt;</td>
+<td>定义折行</td>
+</tr>
+<tr>
+<td>&lt;hr&gt;</td>
+<td>定义水平线</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;我是标题&lt;/h1&gt;</span><br><span class="line">&lt;h2&gt;我是标题&lt;/h2&gt;</span><br><span class="line">&lt;h3&gt;我是标题&lt;/h3&gt;</span><br><span class="line">&lt;h4&gt;我是标题&lt;/h4&gt;</span><br><span class="line">&lt;h5&gt;我是标题&lt;/h5&gt;</span><br><span class="line">&lt;h6&gt;我是标题&lt;/h6&gt;</span><br><span class="line"></span><br><span class="line">&lt;hr&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">    html表示颜色</span><br><span class="line">    1.英文单词:red,pink,blue...</span><br><span class="line">    2.rgb(值1，值2，值3) 0~255</span><br><span class="line">    3.#值1值2值3：00~ff</span><br><span class="line"></span><br><span class="line">--&gt;</span><br><span class="line">&lt;font face=&quot;楷体&quot; size=&quot;5&quot; color=&quot;#ffc0cb&quot;&gt;传智教育&lt;/font&gt;</span><br><span class="line"></span><br><span class="line">&lt;hr&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;刘信达和宋祖德是出了名的蹭流量好手，无论是谁有了热度都要评论一番。王鹤棣最近因新作《苍兰诀》人气暴涨，在刘信达看来，王鹤棣火了连上热搜都是一种错误，他指出王鹤棣连日以来多个热搜，表示全是八卦和无聊。&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;王鹤棣是否真如同刘信达说得那般不堪？看到刘信达侃侃而谈，王鹤棣不少昔日同窗晒出旧照为他证明，透露王鹤棣上学时期是个阳光男孩，虽然学习不是很好，也确实有些“混”，不过没有霸凌同学，朋友多还仗义，曾为同班女同学出头。&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;hr&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>图片、音频、视频标签</strong></p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;img&gt;</td>
+<td>定义图片</td>
+</tr>
+<tr>
+<td>&lt;audio&gt;</td>
+<td>定义音频</td>
+</tr>
+<tr>
+<td>&lt;video&gt;</td>
+<td>定义视频</td>
+</tr>
+</tbody></table>
+<ul>
+<li>img:定义图片<ul>
+<li>src:规定显示图像的 URL(统一资源定位符)</li>
+<li>height:定义图像的高度</li>
+<li>width:定义图像的宽度</li>
+</ul>
+</li>
+<li>audio:定义音频。支持的音频格式: MP3、WAV、OGG<ul>
+<li>src:规定音频的URL</li>
+<li>controls:显示播放控件</li>
+</ul>
+</li>
+<li>video:定义视频。支持的音频格式:MP4, WebM、OGG<ul>
+<li>src:规定视频的URL</li>
+<li>controls:显示播放控件<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">    资源路径:</span><br><span class="line">        1.绝对路径:完整路径</span><br><span class="line">        2。相对路径:相对路径</span><br><span class="line">    尺寸单位:</span><br><span class="line">        1.px像素</span><br><span class="line">        2.百分比</span><br><span class="line">    --&gt;</span><br><span class="line"></span><br><span class="line">&lt;img src=&quot;a.jpg&quot; width=&quot;70%&quot; height=&quot;50%&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;img src=&quot;https://scpic.chinaz.net/files/pic/pic9/202009/apic27858.jpg&quot; width=&quot;70%&quot; height=&quot;50%&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;audio src=&quot;b.mp3&quot; controls&gt;&lt;/audio&gt;</span><br><span class="line"></span><br><span class="line">&lt;video src=&quot;c.mp4&quot; controls width=&quot;50%&quot; height=&quot;50%&quot;&gt;&lt;/video&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<strong>超链接标签</strong><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;a&gt;</td>
+<td>定义超链接，用于链接到另一个资源</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li>href:指定访问资源的URL</li>
+<li>target:指定打开资源的方式<ul>
+<li>_self:默认值，在当前页面打开</li>
+<li>_blank:在空白页面打开</li>
+</ul>
+</li>
+</ul>
+<p><code>&lt;a href=&quot;https://www.itcast.cn&quot; target=&quot;_blank&quot;&gt;点我有惊喜&lt;/a&gt;</code></p>
+<p><strong>列表标签</strong></p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;ol&gt;</td>
+<td>定义有序列表</td>
+</tr>
+<tr>
+<td>&lt;ul&gt;</td>
+<td>定义无序列表</td>
+</tr>
+<tr>
+<td>&lt;li&gt;</td>
+<td>定义列表项</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol type=&quot;A&quot;&gt;</span><br><span class="line">    &lt;li&gt;咖啡&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;茶&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;牛奶&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul type=&quot;circle&quot;&gt;</span><br><span class="line">    &lt;li&gt;咖啡&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;茶&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;牛奶&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>表格标签</strong></p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;table&gt;</td>
+<td>定义表格</td>
+</tr>
+<tr>
+<td>&lt;tr&gt;</td>
+<td>定义行</td>
+</tr>
+<tr>
+<td>&lt;td&gt;</td>
+<td>定义单元格</td>
+</tr>
+<tr>
+<td>&lt;th&gt;</td>
+<td>定义表头单元格</td>
+</tr>
+</tbody></table>
+<ul>
+<li>table:定义表格<ul>
+<li>border:规定表格边框的宽度&gt;width :规定表格的宽度</li>
+<li>cellspacing:规定单元格之间的空白</li>
+</ul>
+</li>
+<li>tr:定义行<ul>
+<li>align:定义表格行的内容对齐方式</li>
+</ul>
+</li>
+<li>td:定义单元格<ul>
+<li>rowspan:规定单元格可横跨的行数</li>
+<li>colspan:规定单元格可横跨的列数<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; width=&quot;500&quot; &gt;&lt;!--cellspaceing是单元格之间的空白--&gt;</span><br><span class="line">    &lt;tr align=&quot;center&quot;&gt;</span><br><span class="line">        &lt;th&gt;序号&lt;/th&gt;</span><br><span class="line">        &lt;th&gt;品牌logo&lt;/th&gt;</span><br><span class="line">        &lt;th&gt;品牌名称&lt;/th&gt;</span><br><span class="line">        &lt;th&gt;企业名称&lt;/th&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">    &lt;tr align=&quot;center&quot;&gt;</span><br><span class="line">        &lt;td&gt;010&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;img src=&quot;./img/2.jpg&quot; width=&quot;60&quot; height=&quot;50&quot;&gt;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;三只松鼠&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;三只松鼠&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr align=&quot;center&quot;&gt;</span><br><span class="line">        &lt;td&gt;009&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;img src=&quot;./img/3.jpg&quot; width=&quot;60&quot; height=&quot;50&quot;&gt;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;优衣库&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;优衣库&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr align=&quot;center&quot;&gt;</span><br><span class="line">        &lt;td&gt;008&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;img src=&quot;./img/1.jpg&quot; width=&quot;60&quot; height=&quot;50&quot;&gt;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;小米&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;小米科技有限公司&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">&lt;/table&gt;</span><br><span class="line">&lt;hr&gt;</span><br><span class="line"></span><br><span class="line">&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; width=&quot;500&quot; &gt;&lt;!--cellspaceing是单元格之间的空白--&gt;</span><br><span class="line">    &lt;tr align=&quot;center&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;th colspan=&quot;2&quot;&gt;品牌logo&lt;/th&gt;</span><br><span class="line">        &lt;th&gt;品牌名称&lt;/th&gt;</span><br><span class="line">        &lt;th&gt;企业名称&lt;/th&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">    &lt;tr align=&quot;center&quot;&gt;</span><br><span class="line">        &lt;td&gt;010&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;img src=&quot;./img/2.jpg&quot; width=&quot;60&quot; height=&quot;50&quot;&gt;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;三只松鼠&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;三只松鼠&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr align=&quot;center&quot;&gt;</span><br><span class="line">        &lt;td rowspan=&quot;2&quot;&gt;009&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;img src=&quot;./img/3.jpg&quot; width=&quot;60&quot; height=&quot;50&quot;&gt;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;优衣库&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;优衣库&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;tr align=&quot;center&quot;&gt;</span><br><span class="line">        &lt;td&gt;008&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;img src=&quot;./img/1.jpg&quot; width=&quot;60&quot; height=&quot;50&quot;&gt;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;小米&lt;/td&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<strong>布局标签</strong><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;div&gt;</td>
+<td>定义html文档中的一个区域部分，经常与css一起使用，用来布局网页</td>
+</tr>
+<tr>
+<td>&lt;span&gt;</td>
+<td>用于组合行内元素</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>表单标签</strong></p>
+<ul>
+<li>表单:在网页中主要负责数据采集功能，使用<form>标签定义表单</form></li>
+<li>表单项(元素):不同类型的input元素、下拉列表、文本域等</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;form&gt;</td>
+<td>定义表单</td>
+</tr>
+<tr>
+<td>&lt;input&gt;</td>
+<td>定义表单项，通过type属性控制输入形式</td>
+</tr>
+<tr>
+<td>&lt;label&gt;</td>
+<td>为表单项定义标注</td>
+</tr>
+<tr>
+<td>&lt;select&gt;</td>
+<td>定义下拉列表</td>
+</tr>
+<tr>
+<td>&lt;option&gt;</td>
+<td>定义下拉列表的列表项</td>
+</tr>
+<tr>
+<td>&lt;textarea&gt;</td>
+<td>定义文本域</td>
+</tr>
+</tbody></table>
+<ul>
+<li>form:定义表单<ul>
+<li>action:规定当提交表单时向何处发送表单数据,URL</li>
+<li>method :规定用于发送表单数据的方式<ul>
+<li>get:浏览器会将数据直接附在表单的action URL之后。大小有限制</li>
+<li>post:浏览器会将数据放到http请求消息体中。大小无限制</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line">    form:</span><br><span class="line">        action:指定表单数据提交的url</span><br><span class="line">            *表单项数据要想被提交，则必须指定其name属性</span><br><span class="line">        method:指定表单提交的方式</span><br><span class="line">            1.get:默认值</span><br><span class="line">                *请求的参数会拼接在url后边</span><br><span class="line">                *url的长度有限制 4kb</span><br><span class="line">            2.post</span><br><span class="line">                *请求参数会在http请求协议的请求体中</span><br><span class="line">                *请求参数无限制</span><br><span class="line"></span><br><span class="line">--&gt;</span><br><span class="line">&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>表单标签-表单项</strong></p>
+<ul>
+<li>&lt;input&gt;:表单项，通过type属性控制输入形式</li>
+<li>&lt;select&gt;:定义下拉列表，<option>定义列表项</option></li>
+<li>&lt;textarea&gt;:文本域</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>type取值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>text</td>
+<td>默认值。定义单行的输入字段</td>
+</tr>
+<tr>
+<td>password</td>
+<td>定义密码字段</td>
+</tr>
+<tr>
+<td>radio</td>
+<td>定义单选按钮</td>
+</tr>
+<tr>
+<td>checkbox</td>
+<td>定义复选框</td>
+</tr>
+<tr>
+<td>file</td>
+<td>定义文件上传按钮</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>定义隐藏的输入字段</td>
+</tr>
+<tr>
+<td>submit</td>
+<td>定义提交按钮，提交按钮会把表单数据发送到服务器</td>
+</tr>
+<tr>
+<td>reset</td>
+<td>定义重置按钮，重置按钮会清除表单中的所有数据</td>
+</tr>
+<tr>
+<td>button</td>
+<td>定义可点击按钮</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;hidden&quot; name=&quot;id&quot; value=&quot;123&quot;&gt;</span><br><span class="line">    &lt;label for=&quot;username&quot;&gt;用户名:&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot;&gt;&lt;br&gt;</span><br><span class="line"></span><br><span class="line">    &lt;label for=&quot;password&quot;&gt;密码:&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot;&gt;&lt;br&gt;</span><br><span class="line"></span><br><span class="line">    性别：</span><br><span class="line">    &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;1&quot; id=&quot;male&quot;&gt; &lt;label for=&quot;male&quot;&gt;男&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;2&quot; id=&quot;female&quot;&gt; &lt;label for=&quot;female&quot;&gt;女&lt;/label&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line"></span><br><span class="line">    爱好:</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;1&quot;&gt;旅游</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;2&quot;&gt;电影</span><br><span class="line">    &lt;input type=&quot;checkbox&quot; name=&quot;hobby&quot; value=&quot;3&quot;&gt;游戏</span><br><span class="line">    &lt;br&gt;</span><br><span class="line"></span><br><span class="line">    头像:</span><br><span class="line">    &lt;input type=&quot;file&quot;&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line"></span><br><span class="line">    城市：</span><br><span class="line">    &lt;select name=&quot;city&quot;&gt;</span><br><span class="line">        &lt;option&gt;北京&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;shanghai&quot;&gt;上海&lt;/option&gt;</span><br><span class="line">        &lt;option&gt;广州&lt;/option&gt;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line"></span><br><span class="line">    个人描述：</span><br><span class="line">    &lt;textarea cols=&quot;20&quot; rows=&quot;5&quot; name=&quot;desc&quot;&gt;&lt;/textarea&gt;</span><br><span class="line">    &lt;br&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;免费注册&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;reset&quot; value=&quot;重置&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;button&quot; value=&quot;一个按钮&quot;&gt;</span><br><span class="line">    </span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+
+
       
 
       
@@ -269,6 +567,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2022/08/20/CSS/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          CSS
+        
+      </div>
+    </a>
   
   
     <a href="/2022/08/18/MyBatis/" id="article-nav-older" class="article-nav-link-wrap">
