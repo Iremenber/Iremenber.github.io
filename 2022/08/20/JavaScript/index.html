@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>java基础1 | 土块一个的博客</title>
+  <title>JavaScript | 土块一个的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="集合 HashMap&lt;Object,Object&gt; TreeSet ArrayList">
+  <meta name="description" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java基础1">
-<meta property="og:url" content="http://example.com/2022/08/02/java%E5%9F%BA%E7%A1%801/index.html">
+<meta property="og:title" content="JavaScript">
+<meta property="og:url" content="http://example.com/2022/08/20/JavaScript/index.html">
 <meta property="og:site_name" content="土块一个的博客">
-<meta property="og:description" content="集合 HashMap&lt;Object,Object&gt; TreeSet ArrayList">
+<meta property="og:description" content="JavaScript">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-02T07:05:11.000Z">
-<meta property="article:modified_time" content="2022-08-02T07:23:46.302Z">
+<meta property="article:published_time" content="2022-08-20T08:23:57.000Z">
+<meta property="article:modified_time" content="2022-08-23T07:12:44.583Z">
 <meta property="article:author" content="土块一个">
 <meta name="twitter:card" content="summary">
   
@@ -157,20 +157,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-java基础1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JavaScript" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      java基础1
+      JavaScript
     </h1>
   
 
         
-        <a href="/2022/08/02/java%E5%9F%BA%E7%A1%801/" class="archive-article-date">
-  	<time datetime="2022-08-02T07:05:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-02</time>
+        <a href="/2022/08/20/JavaScript/" class="archive-article-date">
+  	<time datetime="2022-08-20T08:23:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-20</time>
 </a>
 <span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
 
@@ -179,10 +179,311 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><ul>
-<li>HashMap&lt;Object,Object&gt;</li>
-<li>TreeSet<Object></Object></li>
-<li>ArrayList<Object></Object></li>
+        <h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><span id="more"></span>
+<p><strong>JavaScript 引入方式</strong><br>1．内部脚本:将JS代码定义在HTML页面中<br>在HTML 中，JavaScript代码必须位 <script>与</script>标签之间<br><code>&lt;script&gt; alert(&quot;hello JS~&quot;) &lt;/script&gt;</code></p>
+<p>提示:</p>
+<ul>
+<li>在HTML文档中可以在任意地方，放置任意数量的<code>&lt;script&gt;</code>。</li>
+<li>一般把脚本置于<body>元素的底部，可改善显示速度，因为脚本执行会拖慢显示</body></li>
+</ul>
+<p>2.外部脚本:9将JS代码定义在外部JS文件中，然后引入到HTML页面中</p>
+<ul>
+<li>外部文件: demo.js<br><code>alert(&quot;hello JS~&quot;)</code></li>
+<li>引入外部js文件<br><code>&lt;script src=&quot; ../js/demo.js&quot;&gt;&lt;iscript&gt;</code></li>
+</ul>
+<p>注意:<br>1.外部脚本不能包含<code>&lt;script&gt;</code>标签<br>2.<code>&lt;script&gt;</code>标签不能自闭合</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">    alert(&quot;hello,js1&quot;);//弹出警告框--&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;script src=&quot;js/demo.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>demo.js：<code>alert(&quot;hello,js2&quot;);</code></p>
+<h2 id="JavaScript基础语法"><a href="#JavaScript基础语法" class="headerlink" title="JavaScript基础语法"></a>JavaScript基础语法</h2><p><strong>输出语句</strong></p>
+<ul>
+<li>使用<code>window.alert()</code>写入警告框</li>
+<li>使用<code>document.write()</code>写入HTML输出</li>
+<li>使用<code>console.log()</code>写入浏览器控制台<br>window.alert(“hello JS<del>“);&#x2F;&#x2F;弹出警告框<br>document.write(“hello JS ~”);&#x2F;&#x2F;写入HTML<br>console.log(“hello JS</del>“);&#x2F;&#x2F;写入控制台</li>
+</ul>
+<p><strong>变量</strong></p>
+<ul>
+<li>JavaScript中用var关键字(va@able的缩写）来声明变量<br><code>var test = 20; test =&quot;张三&quot;;</code></li>
+<li>JavaScript是一门弱类型语言，变量可以存放不同类型的值。</li>
+<li>变量名需要遵循如下规则:<ul>
+<li>组成字符可以是任何字母、数字、下划线(_）或美元符号(S)</li>
+<li>数字不能开头</li>
+<li>建议使用驼峰命名</li>
+</ul>
+</li>
+<li>ECMAScript 6新增了let关键字来定义变量。它的用法类似于var，但是所声明的变量，只在 let关键字所在的代码块内有效，且不允许重复声明</li>
+<li>ECMAScript 6新增了const关键字，用来声明一个只读的常量。一旦声明，常量的值就不能改变。</li>
+</ul>
+<p><strong>数据类型</strong><br><code>var test = 20;</code></p>
+<p>JavaScript中分为:原始类型和引用类型<br>5种原始类型:</p>
+<ul>
+<li>number:数字（整数、小数、NaN(Not a Number))</li>
+<li>string:字符、字符串，单双引皆可</li>
+<li>boolean:布尔。true，false</li>
+<li>null:对象为空</li>
+<li>undefined:当声明的变量未初始化时，该变量的默认值是undefine</li>
+</ul>
+<p>使用typeof运算符可以获取数据类型<br><code>alert(typeof age);</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    /*</span><br><span class="line">    * ==：类型不一样会转换类型，再去比较值</span><br><span class="line">    *</span><br><span class="line">    * ===:类型不一样之间返回false</span><br><span class="line">    * */</span><br><span class="line">    var age1=20;</span><br><span class="line">    var age2=&quot;20&quot;;</span><br><span class="line"></span><br><span class="line">    alert(age1 === age2);</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>函数</strong><br>函数(方法)是被设计为执行特定任务的代码块</p>
+<ul>
+<li><p>定义:JavaScript函数通过functi园关键词进行定义，语法为:<br><code>function functionName(参数1,参数2..)&#123; 要执行的代码 &#125;</code></p>
+<ul>
+<li>注意:<ul>
+<li>形式参数不需要类型。因为JavaScript是弱类型语言</li>
+<li>返回值也不需要定义类型，可以在函数内部直接使用return返回即可</li>
+<li><code>function add(a,b)&#123; return a + b;&#125;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>调用:函数名称(实际参数列表);<br><code>let result = add(1,2);</code></p>
+</li>
+<li><p>定义方式二:<br><code>var functionName = function(参数列表)&#123;要执行的代码 &#125;</code><br><code>var add = function (a,b) &#123; return a+ b;&#125;</code></p>
+</li>
+<li><p>调用:Js中，函数调用可以传递任意个数参数<br><code>let result = add(1,2,3);</code></p>
+</li>
+</ul>
+<p><strong>JavaScript对象</strong></p>
+<p><em>Array</em></p>
+<p>JavaScript Array对象用于定义数组</p>
+<ul>
+<li>定义<br><code>var 变量名=new Array(元素列表);//方式一</code> <code>var arr = new Array(1,2,3);</code><br><code>var 变量名=[元素列表];//方式二</code> <code>var arr =[1,2,3];</code></li>
+<li>访问<br><code>arr[索引]=值;</code> <code>arr[0] = 1;</code></li>
+<li>注意:JS数组类似于Java集合，长度，类型都可变</li>
+</ul>
+<p><strong>Array对象</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>constructor</td>
+<td>返回对创建此对象的数组函数的引用</td>
+</tr>
+<tr>
+<td>length</td>
+<td>设置或返回成组中元素的数目</td>
+</tr>
+<tr>
+<td>prototype</td>
+<td>使您有能力向对象添加属性和方法。</td>
+</tr>
+<tr>
+<td><strong>Array 对象方法</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>方法</td>
+<td>描述</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>concat()</td>
+<td>连接两个或更多的数组，并返回结果。</td>
+</tr>
+<tr>
+<td>join()</td>
+<td>把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。</td>
+</tr>
+<tr>
+<td>pop()</td>
+<td>删除并返回数组的最后一个元素</td>
+</tr>
+<tr>
+<td>push()</td>
+<td>向数组的末尾添加一个或更多元素，并返回新的长度。</td>
+</tr>
+<tr>
+<td>reverse()</td>
+<td>颠倒数组中元素的顺序。</td>
+</tr>
+<tr>
+<td>shift()</td>
+<td>删除并返回数组的第一个元素</td>
+</tr>
+<tr>
+<td>slice()</td>
+<td>从某个已有的数组返回选定的元素</td>
+</tr>
+<tr>
+<td>sort()</td>
+<td>对数组的元素进行排序</td>
+</tr>
+<tr>
+<td>splice()</td>
+<td>删除元素，并向数组添加新元素。</td>
+</tr>
+<tr>
+<td>tosource()</td>
+<td>返回该对象的源代码。</td>
+</tr>
+<tr>
+<td>toString()</td>
+<td>把数组转换为字符串，并返回结果。</td>
+</tr>
+<tr>
+<td>toLocaleString()</td>
+<td>把数组转换为本地数组，并返回结果。</td>
+</tr>
+<tr>
+<td>unshift()</td>
+<td>向数组的开头添加一个或更多元素，并返回新的长度。</td>
+</tr>
+<tr>
+<td>valueof()</td>
+<td>返回数组对象的原始值</td>
+</tr>
+</tbody></table>
+<p><strong>String</strong></p>
+<ul>
+<li>定义<br><code>var 变量名=new String(s);//方式一</code> <code>var str = new String(&quot;hello&quot;);</code><br><code>var变量名=s; //方式二</code> <code>var str = &quot;hello&quot;; var str = &#39;hello&#39;;</code></li>
+<li>属性<br>length|字符串的长度</li>
+<li>方法<br>charAt()  | 返回在指定位置的字符。<br>indexOf() | 检索字符串。<br>trim()    | 去除两端的空白字符</li>
+</ul>
+<p><strong>自定义对象</strong></p>
+<ul>
+<li>格式<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var 对象名称 = &#123;</span><br><span class="line">    属性名称1:属性1,</span><br><span class="line">    属性名称2:属性2,</span><br><span class="line">    ...</span><br><span class="line">    函数名称:function(形参列表)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+例如：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var person =&#123;</span><br><span class="line">        name : &quot;张三&quot;,</span><br><span class="line">        age : 23,</span><br><span class="line">        eat : function()&#123;</span><br><span class="line">            alert(&quot;干饭&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a><strong>BOM</strong></h2><ul>
+<li>Browser Object Model浏览器对象模型</li>
+<li>JavaScript将浏览器的各个组成部分封装为对象</li>
+<li>组成:<ul>
+<li>Window:浏览器窗口对象</li>
+<li>Navigator:浏览器对象</li>
+<li>screen:屏幕对象</li>
+<li>History:历史记录对象</li>
+<li>Location:地址栏对象</li>
+</ul>
+</li>
+</ul>
+<p><em><strong>Window</strong></em></p>
+<ul>
+<li><p>Window:浏览器窗口对象</p>
+</li>
+<li><p>获取:直接使用window，其中window.可以省略<br><code>window.alert(&quot;abc&quot;);</code></p>
+</li>
+<li><p>属性:获取其他BOM对象<br>history:对History对象的只读引用。请参数History 对象。<br>  Navigator:对Navigator 对象的只读引用。请参数 Navigator 对象。<br>Screen:对Screen对象的只读引用。请参数Screen对象。<br>location:用R窗口或框架的 Location对象。请参阅Location对象。</p>
+</li>
+<li><p>方法<br>alert():显示带有一段消息和一个确认按钮的警告框。<br>confirm():显示带有一段消息以及确认按钮和取消按钮的对话框。<br>setInterval(function,毫秒值):按照指定的周期(以毫秒计)来调用函数或计算表达式。&#x2F;&#x2F;循环执行<br>setTimeout((function,毫秒值)):在指定的毫秒数后调用函数或计算表达式。&#x2F;&#x2F;执行一次</p>
+</li>
+</ul>
+<p><strong>History</strong></p>
+<ul>
+<li>History: 历史记录</li>
+<li>获取:使用window.history获取，其中window.可以省略</li>
+<li>window.history.方法();<br>history.方法();·</li>
+<li>方法<br>back()：加载history 列表中的前一个URL。<br>forward()：加载 history 列表中的下一个URL。</li>
+</ul>
+<p><strong>Location</strong></p>
+<ul>
+<li>Location:地址栏对象</li>
+<li>获取:使用window.location获取，其中window.可以省略<br><code>window.location.方法(); location.方法();</code></li>
+<li>属性<br>href:设置或返回完整的URL。</li>
+</ul>
+<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><ul>
+<li>Document Object Model文档对象模型</li>
+<li>将标记语言的各个组成部分封装为对象<ul>
+<li>Document:整个文档对象</li>
+<li>Element:元素对象</li>
+<li>Attribute:属性对象</li>
+<li>Text:文本对象</li>
+<li>Comment:注释对象</li>
+</ul>
+</li>
+</ul>
+<p><strong>获取Element</strong></p>
+<ul>
+<li>Element:元素对象</li>
+<li>获取:使用Document对象的方法来获取</li>
+</ul>
+<ol>
+<li>getElementByld:根据id属性值获取，返回一个Element对象</li>
+<li>getElementsByTagName:根据标签名称获取，返回Element对象数组</li>
+<li>getElementsByName:根据name属性值获取，返回Element对象数组</li>
+<li>getElementsByClassName:根据class属性值获取，返回Element对象数组</li>
+</ol>
+<h2 id="事件监听"><a href="#事件监听" class="headerlink" title="事件监听"></a>事件监听</h2><p><strong>事件绑定</strong></p>
+<ul>
+<li>事件绑定有两种方式:<ul>
+<li>方式一:通过HTML标签中的事件属性进行绑定<br><code>&lt;input type=&quot;button&quot; onclick=&#39;on()&#39;&gt; function on()&#123; alert(&quot;我被点了&quot;);</code></li>
+<li>方式二:通过DOM元素属性绑定<br><code>&lt;input type=&quot;button&quot; id=&quot;btn&quot;&gt; document.getElementByld(&quot;btn&quot;).onclick = function ()&#123;alert(&quot;我被点了&quot;); &#125;</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>常见事件</strong></p>
+<table>
+<thead>
+<tr>
+<th>事件名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>onclick</td>
+<td>鼠标单击事件</td>
+</tr>
+<tr>
+<td>onblur</td>
+<td>元素失去焦点</td>
+</tr>
+<tr>
+<td>onfocus</td>
+<td>元素获得焦点</td>
+</tr>
+<tr>
+<td>onload</td>
+<td>某个页面或图像被完成加载</td>
+</tr>
+<tr>
+<td>onsubmit</td>
+<td>当表单提交时触发该事件</td>
+</tr>
+<tr>
+<td>onkeydown</td>
+<td>某个键盘的键被按下</td>
+</tr>
+<tr>
+<td>onmouseover</td>
+<td>鼠标被移到某元素之上</td>
+</tr>
+<tr>
+<td>onmouseout</td>
+<td>鼠标从某元素移开</td>
+</tr>
+</tbody></table>
+<h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><ul>
+<li>概念:正则表达式定义了字符串组成的规则</li>
+<li>定义:<br>1.直接量:注意不要加引号<br><code>var reg = /^w&#123;6,12]$/;</code><br>2.创建RegExp对象<br><code>var reg = new RegExp(&quot;^llw&#123;6,12]$&quot;);</code></li>
+<li>方法:<ul>
+<li>test(str):判断指定字符串是否符合规则，返回true或 false</li>
+</ul>
+</li>
+<li>语法:<ul>
+<li><code>^</code>:表示开始</li>
+<li><code>$</code>:表示结束</li>
+<li><code>[]</code>:代表某个范围内的单个字符，比如:[0-9]单个数字字符</li>
+<li><code>.</code>:代表任意单个字符，除了换行和行结束符</li>
+<li><code>\w</code>:代表单词字符:字母、数字、下划线(_)，相当于[A-Za-z0-9_]</li>
+<li><code>\d</code>:代表数字字符:相当于[0-9]</li>
+<li>量词:<ul>
+<li><code>+</code>至少一个    <code>var reg =/^\w+$/;</code></li>
+<li><code>*</code>:零个或多个</li>
+<li><code>?</code>∶零个或一个</li>
+<li><code>&#123;x&#125;</code>: x个</li>
+<li><code>&#123;m,&#125;</code>:至少m个</li>
+<li><code>&#123;m,n&#125;</code>:至少m个，最多n个</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
       
@@ -263,7 +564,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/02/java%E5%9F%BA%E7%A1%801/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/20/JavaScript/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,18 +578,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/08/02/java-TCP-Client%E4%B8%8EServer/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/08/23/WEB%E6%A0%B8%E5%BF%83/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          java-TCP-Client与Server
+          WEB核心
         
       </div>
     </a>
   
   
-    <a href="/2022/07/23/test/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">test</div>
+    <a href="/2022/08/20/CSS/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS</div>
       <i class="icon-circle-right"></i>
     </a>
   
