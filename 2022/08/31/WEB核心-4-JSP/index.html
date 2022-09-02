@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>土块一个的博客</title>
+  <title>WEB核心-4-JSP | 土块一个的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="土块一个的博客">
-<meta property="og:url" content="http://example.com/page/4/index.html">
+  <meta name="description" content="JSP&#x3D;Java Server Pages(既可以写html又可以写java)EL表达式(Expression Language)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WEB核心-4-JSP">
+<meta property="og:url" content="http://example.com/2022/08/31/WEB%E6%A0%B8%E5%BF%83-4-JSP/index.html">
 <meta property="og:site_name" content="土块一个的博客">
+<meta property="og:description" content="JSP&#x3D;Java Server Pages(既可以写html又可以写java)EL表达式(Expression Language)">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-31T07:56:51.000Z">
+<meta property="article:modified_time" content="2022-08-31T12:40:53.257Z">
 <meta property="article:author" content="土块一个">
 <meta name="twitter:card" content="summary">
   
@@ -153,22 +157,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-java-TCP-持续输入" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-WEB核心-4-JSP" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/02/java-TCP-%E6%8C%81%E7%BB%AD%E8%BE%93%E5%85%A5/">java-TCP-持续输入</a>
+    <h1 class="article-title" itemprop="name">
+      WEB核心-4-JSP
     </h1>
   
 
         
-        <a href="/2022/08/02/java-TCP-%E6%8C%81%E7%BB%AD%E8%BE%93%E5%85%A5/" class="archive-article-date">
-  	<time datetime="2022-08-02T08:02:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-02</time>
+        <a href="/2022/08/31/WEB%E6%A0%B8%E5%BF%83-4-JSP/" class="archive-article-date">
+  	<time datetime="2022-08-31T07:56:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-31</time>
 </a>
 <span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
 
@@ -177,508 +179,54 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class Client &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        Socket s=new Socket(&quot;192.168.1.2&quot;,1000);</span><br><span class="line">        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));</span><br><span class="line">        BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));</span><br><span class="line">        String line;</span><br><span class="line">        while((line= br.readLine())!=null)&#123;</span><br><span class="line">            if(&quot;886&quot;.equals(line))&#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            bw.write(line);</span><br><span class="line">            bw.newLine();//写一个分割行</span><br><span class="line">            bw.flush();</span><br><span class="line">        &#125;</span><br><span class="line">        s.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p><em><strong>Server</strong></em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class Server &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        ServerSocket ss=new ServerSocket(1000);</span><br><span class="line">        Socket s=ss.accept();</span><br><span class="line">        BufferedReader br=new BufferedReader(new InputStreamReader(s.getInputStream()));</span><br><span class="line">        String line;</span><br><span class="line">        while((line= br.readLine())!=null)&#123;</span><br><span class="line">            System.out.println(line);</span><br><span class="line">        &#125;</span><br><span class="line">        ss.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
+        <p>JSP&#x3D;Java Server Pages(既可以写html又可以写java)<br>EL表达式(Expression Language)</p>
+<span id="more"></span>
+<p>###JSP快速入门<br>1.导入JSP坐标</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupld&gt;javax.servlet.jsp&lt;/groupld&gt;</span><br><span class="line">    &lt;artifactld&gt;jsp-api&lt;/artifactld&gt;</span><br><span class="line">    &lt;version&gt;2.2&lt;/version&gt;</span><br><span class="line">    &lt;score&gt;provided&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>2.创建JSP文件<br>3.编写HTML标签和Java代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;hello jsp~&lt;/h1&gt;</span><br><span class="line">&lt;% system.out.printf(&quot;jsp hello~&quot;);%&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/02/java-TCP-%E6%8C%81%E7%BB%AD%E8%BE%93%E5%85%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java-TCP-Client与Server" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/02/java-TCP-Client%E4%B8%8EServer/">java-TCP-Client与Server</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/02/java-TCP-Client%E4%B8%8EServer/" class="archive-article-date">
-  	<time datetime="2022-08-02T07:41:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-02</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="TCP练习一"><a href="#TCP练习一" class="headerlink" title="TCP练习一"></a>TCP练习一</h2><p><strong>ServerDemo</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class ServerDemo &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        ServerSocket ss=new ServerSocket(1000);</span><br><span class="line">        Socket s=ss.accept();</span><br><span class="line">        InputStream is=s.getInputStream();</span><br><span class="line">        byte[] bys=new byte[1024];</span><br><span class="line">        int len=is.read(bys);</span><br><span class="line">        String data=new String(bys,0,len);</span><br><span class="line">        System.out.println(&quot;服务器:&quot;+data);</span><br><span class="line">        OutputStream os=s.getOutputStream();</span><br><span class="line">        os.write(&quot;数据已经收到&quot;.getBytes());</span><br><span class="line">        s.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p><em>ClientDemo</em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class ClientDemo &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        Socket s=new Socket(&quot;192.168.1.2&quot;,1000);</span><br><span class="line">        OutputStream os=s.getOutputStream();</span><br><span class="line">        os.write(&quot;hello,tcp,我来辣&quot;.getBytes());</span><br><span class="line">        InputStream is=s.getInputStream();</span><br><span class="line">        byte[] bys=new byte[1024];</span><br><span class="line">        int len=is.read(bys);</span><br><span class="line">        String data=new String(bys,0,len);</span><br><span class="line">        System.out.println(&quot;客户端：&quot;+data);</span><br><span class="line">        s.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/02/java-TCP-Client%E4%B8%8EServer/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java基础1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/02/java%E5%9F%BA%E7%A1%801/">java基础1</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/02/java%E5%9F%BA%E7%A1%801/" class="archive-article-date">
-  	<time datetime="2022-08-02T07:05:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-02</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><ul>
-<li>HashMap&lt;Object,Object&gt;</li>
-<li>TreeSet<Object></Object></li>
-<li>ArrayList<Object></Object></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/02/java%E5%9F%BA%E7%A1%801/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/07/23/test/">test</a>
-    </h1>
-  
-
-        
-        <a href="/2022/07/23/test/" class="archive-article-date">
-  	<time datetime="2022-07-23T03:55:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-23</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/.com//1.png"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/07/23/test/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-插入图片练习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/07/23/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%BB%83%E4%B9%A0/">插入图片练习</a>
-    </h1>
-  
-
-        
-        <a href="/2022/07/23/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%BB%83%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2022-07-23T02:28:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-23</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><h1 id="网络图片插入"><a href="#网络图片插入" class="headerlink" title="网络图片插入"></a><strong>网络图片插入</strong></h1><img src="/../../../../img/avatar.jpg" alt="图片"></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/07/23/%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E7%BB%83%E4%B9%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MarkDown的语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/07/19/MarkDown%E7%9A%84%E8%AF%AD%E6%B3%95/">MarkDown的语法</a>
-    </h1>
-  
-
-        
-        <a href="/2022/07/19/MarkDown%E7%9A%84%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2022-07-19T09:00:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-19</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p><em>斜体</em> 或者 <em>斜体</em><br><strong>粗体</strong><br><em><strong>加粗斜体</strong></em><br><del>删除线</del><br>在最后一行加–能增大这部分</p>
-<hr>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><hr>
-<p>超链接使用：<br>点击访问<a target="_blank" rel="noopener" href="http://baidu.com/">百度</a><br>&lt;baidu.com&gt;</p>
-<hr>
-<p><em><strong>锚点</strong></em></p>
-<hr>
-<p>无序列表：前面用* + -都行</p>
+<p>###JSP原理<br><mark>JSP本质上就是一个Servlet</mark></p>
 <ul>
-<li>无序列表</li>
-<li>2</li>
-<li>3<br><em>有序列表</em>：</li>
+<li>JSP在被访问时，由JSP容器(Tomcat)将其转换为Java文件（Servlet），在由JSP容器（Tomcat）将其编译，最终对外提供服务的其实就是这个字节码文件</li>
 </ul>
-<ol>
-<li>有序</li>
-<li>2</li>
-<li>3<br><strong>列表缩进</strong>:在这一行最后加tab或者空格来保持缩进<br>好好<br>好好</li>
-</ol>
-<p><del>引用列表</del>:<br>读书方法: </p>
-<blockquote>
-<p>打开电灯<br>读书</p>
-</blockquote>
-<ol>
-<li>1986. what a great season</li>
-<li></li>
-</ol>
-<hr>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>hello world</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>wtf</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>afk</p>
-</blockquote>
-<blockquote>
-<ol>
-<li>这是第一行</li>
-<li>这是第二行</li>
-</ol>
-<p>给出一些子代码例子</p>
-<pre><code>  return 0;//至少两次tab才会显示代码这样的效果
-</code></pre>
-</blockquote>
-<hr>
-<p>###插入图像</p>
-<blockquote>
-<p>语法说明：![图片Alt](图片地址 “图片Title”)</p>
-</blockquote>
-<blockquote>
-<p>7.2. 参考式<br>语法说明：</p>
-<p>在文档要插入图片的地方写![图片Alt][标记]</p>
-<p>在文档的最后写上[标记]:图片地址 “Title”</p>
-</blockquote>
-<hr>
-<p>“[TOC]”用来显示目录<br>[toc]</p>
-<hr>
-<p>注脚[^1],看看注脚[^2],颜色[^3]<br>[^1]:这是注脚$\color{red}{1}$<br>[^2]:这是注脚$\color{yellow}{2}$<br>[^3]:红：255，0，0 #FF0000<br>橙: 255,125,0 #FF7D00<br>黄：255，255，0 #FFFF00<br>绿：0，255，0 #00FF00<br>蓝：0，0，255 #0000FF<br>靛: 0,255,255 #00FFFF<br>紫: 255,0,255 #FF00FF</p>
-<hr>
-<p>$y&#x3D;x^2$<br>两个$中间显示公式效果</p>
+<h3 id="JSP脚本"><a href="#JSP脚本" class="headerlink" title="JSP脚本"></a>JSP脚本</h3><p>JSP脚本用于在JSP页面内定义Java代码</p>
 <ul>
-<li>$$\sum_{i&#x3D;1}^n a_i&#x3D;0$$<br>$$f(x_1,x_x,\ldots,x_n) &#x3D; x_1^2 + x_2^2 + \cdots + x_n^2 $$<br>$$\sum^{j-1}<em>{k&#x3D;0}{\widehat{\gamma}</em>{kj} z_k}$$</li>
+<li>JSP脚本分类:<br>  1.<code>&lt;%...%&gt;</code>:内容会直接放到_jspService()方法之中<br>  2.<code>&lt;%=...%&gt;</code>∶内容会放到out.print()中，作为out.print()的参数<br>  3.<code>&lt;%!...%&gt;</code>∶内容会放到_jspService()方法之外，被类直接包含</li>
 </ul>
-<hr>
-<p>表格:</p>
-<table>
-<thead>
-<tr>
-<th>学号</th>
-<th>姓名</th>
-<th>分数</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>小明</td>
-<td>男</td>
-<td>75</td>
-</tr>
-<tr>
-<td>小红</td>
-<td>女</td>
-<td>79</td>
-</tr>
-<tr>
-<td>小陆</td>
-<td>男</td>
-<td>92</td>
-</tr>
-</tbody></table>
-<hr>
-<p><code>scanf()</code>咋使用<br>&#96;这符号在ESC下面</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()&#123;</span><br><span class="line">    printf(&quot;hello,world&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>#markdown画图</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph TB;</span><br><span class="line">A--&gt;B</span><br><span class="line">B--&gt;c</span><br><span class="line">c--&gt;D</span><br><span class="line">D--&gt;A</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>TB，从上到下<br>TD，从上到下<br>BT，从下到上<br>RL，从右到左<br>LR，从左到右</p>
-<blockquote>
-<p>T &#x3D; TOP，B &#x3D; BOTTOM，L &#x3D; LEFT，R &#x3D; RIGHT，D &#x3D; DOWN</p>
-</blockquote>
-</li>
-<li><p>默认节点 A<br>文本节点<br>圆角节点 C(cname)<br>圆形节点 D((dname))<br>非对称节点 E&gt;ename]<br>菱形节点 F{fname}</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph LR;</span><br><span class="line"></span><br><span class="line">A--&gt;B[B]</span><br><span class="line">B--&gt;c(C)</span><br><span class="line">c--&gt;D((D))</span><br><span class="line">D--&gt;A&gt;A]</span><br><span class="line">F&#123;F&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>箭头连接 A1–-&gt;B1<br>开放连接 A2—B2<br>标签连接 A3–text—B3<br>箭头标签连接 A4–text–&gt;B4<br>虚线开放连接 A5.-B5<br>虚线箭头连接 A6-.-&gt;B6<br>标签虚线连接 A7-.text.-B7<br>标签虚线箭头连接 A8-.text.-&gt;B8<br>粗线开放连接 A9&#x3D;&#x3D;&#x3D;B9<br>粗线箭头连接 A10&#x3D;&#x3D;&gt;B10<br>标签粗线开放连接 A11&#x3D;&#x3D;text&#x3D;&#x3D;&#x3D;B11<br>标签粗线箭头连接 A12&#x3D;&#x3D;text&#x3D;&#x3D;&gt;B12</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">  A1--&gt;B1</span><br><span class="line">  A2---B2</span><br><span class="line">  A3--text---B3</span><br><span class="line">  A4--text--&gt;B4</span><br><span class="line">  A5-.-B5</span><br><span class="line">  A6-.-&gt;B6</span><br><span class="line">  A7-.text.-B7</span><br><span class="line">  A8-.text.-&gt;B8</span><br><span class="line">  A9===B9</span><br><span class="line">  A10==&gt;B10</span><br><span class="line">  A11==text===B11</span><br><span class="line">  A12==text==&gt;B12</span><br></pre></td></tr></table></figure></li>
-<li><p>subgraph（子图）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">  subgraph g1</span><br><span class="line">    a1--&gt;b1</span><br><span class="line">  end</span><br><span class="line">  subgraph g2</span><br><span class="line">    a2--&gt;b2</span><br><span class="line">  end</span><br><span class="line">  subgraph g3</span><br><span class="line">    a3--&gt;b3</span><br><span class="line">  end</span><br><span class="line">  a3--&gt;a2</span><br></pre></td></tr></table></figure></li>
-<li><p>sequence diagram （序列图）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">　　Alice-&gt;&gt;Bob: Hello Bob, how are you?</span><br><span class="line">　　alt is sick</span><br><span class="line">　　　　Bob-&gt;&gt;Alice:not so good :(</span><br><span class="line">　　else is well</span><br><span class="line">　　　　Bob-&gt;&gt;Alice:good</span><br><span class="line">　　end</span><br><span class="line">　　opt Extra response</span><br><span class="line">　　　　Bob-&gt;&gt;Alice:Thanks for asking</span><br><span class="line">　　end</span><br></pre></td></tr></table></figure></li>
-<li><p>无箭头实线 -&gt;<br>有箭头实线 -&gt;&gt;<br>无箭头虚线 –&gt;<br>有箭头虚线 –&gt;&gt;<br>带x实线 -x<br>带x虚线 –x</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">  Note right of A: 倒霉, 碰到B了</span><br><span class="line">  A-&gt;B:   Hello B, how are you ?</span><br><span class="line">  note left of B: 倒霉,碰到A了</span><br><span class="line">  B--&gt;A:  Fine, thx, and you?</span><br><span class="line">  note over A,B: 快点溜，太麻烦了</span><br><span class="line">  A-&gt;&gt;B:  I&#x27;m fine too.</span><br><span class="line">  note left of B: 快点打发了A</span><br><span class="line">  B--&gt;&gt;A: Great!</span><br><span class="line">  note right of A: 溜之大吉</span><br><span class="line">  A-xB:   Wait a moment</span><br><span class="line">  loop Look B every minute</span><br><span class="line">　  A-&gt;&gt;B: look B, go?</span><br><span class="line">　　B-&gt;&gt;A: let me go?</span><br><span class="line">　end</span><br><span class="line">　B--xA: I&#x27;m off, byte 　</span><br><span class="line">  note right of A: 太好了, 他走了</span><br></pre></td></tr></table></figure></li>
-<li><p>gantt diagram(甘特图)</p>
-</li>
-<li><table>
-<thead>
-<tr>
-<th><strong>title</strong></th>
-<th><strong>标题</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>dateFormat</td>
-<td>日期格式</td>
-</tr>
-<tr>
-<td>section</td>
-<td>模块</td>
-</tr>
-<tr>
-<td>Completed</td>
-<td>已经完成</td>
-</tr>
-<tr>
-<td>Active</td>
-<td>当前正在进行</td>
-</tr>
-<tr>
-<td>Future</td>
-<td>后续待处理</td>
-</tr>
-<tr>
-<td>crit</td>
-<td>关键阶段</td>
-</tr>
-<tr>
-<td>日期缺失</td>
-<td>默认从上一项完成后</td>
-</tr>
-</tbody></table>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gantt</span><br><span class="line">dateFormat YYYY-MM-DD</span><br><span class="line">section S1</span><br><span class="line">T1: 2014-01-01, 9d</span><br><span class="line">section S2</span><br><span class="line">T2: 2014-01-11, 9d</span><br><span class="line">section S3</span><br><span class="line">T3: 2014-01-02, 9d</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">gantt</span><br><span class="line">    dateFormat  YYYY-MM-DD</span><br><span class="line">    title Adding GANTT diagram functionality to mermaid</span><br><span class="line"> </span><br><span class="line">    section A section</span><br><span class="line">    Completed task            :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">    Active task               :active,  des2, 2014-01-09, 3d</span><br><span class="line">    Future task               :         des3, after des2, 5d</span><br><span class="line">    Future task2               :         des4, after des3, 5d</span><br><span class="line"> </span><br><span class="line">    section Critical tasks</span><br><span class="line">    Completed task in the critical line :crit, done, 2014-01-06,24h</span><br><span class="line">    Implement parser and jison          :crit, done, after des1, 2d</span><br><span class="line">    Create tests for parser             :crit, active, 3d</span><br><span class="line">    Future task in critical line        :crit, 5d</span><br><span class="line">    Create tests for renderer           :2d</span><br><span class="line">    Add to mermaid                      :1d</span><br><span class="line"> </span><br><span class="line">    section Documentation</span><br><span class="line">    Describe gantt syntax               :active, a1, after des1, 3d</span><br><span class="line">    Add gantt diagram to demo page      :after a1  , 20h</span><br><span class="line">    Add another diagram to demo page    :doc1, after a1  , 48h</span><br><span class="line"> </span><br><span class="line">    section Last section</span><br><span class="line">    Describe gantt syntax               :after doc1, 3d</span><br><span class="line">    Add gantt diagram to demo page      : 20h</span><br><span class="line">    Add another diagram to demo page    : 48h</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page import=&quot;java.util.List&quot; %&gt;</span><br><span class="line">&lt;%@ page import=&quot;java.util.ArrayList&quot; %&gt;</span><br><span class="line">&lt;%@ page import=&quot;MyTry.Brand&quot; %&gt;&lt;%--</span><br><span class="line">  Created by IntelliJ IDEA.</span><br><span class="line">  User: acernb</span><br><span class="line">  Date: 2022/8/31</span><br><span class="line">  Time: 19:44</span><br><span class="line">  To change this template use File | Settings | File Templates.</span><br><span class="line">--%&gt;</span><br><span class="line">&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; %&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    List&lt;Brand&gt; brands=new ArrayList&lt;Brand&gt;();</span><br><span class="line">    brands.add(new Brand(1,&quot;三只松鼠&quot;,&quot;三只松鼠&quot;,100,&quot;三只松鼠，好吃不上火&quot;,1));</span><br><span class="line">    brands.add(new Brand(2,&quot;优衣库&quot;,&quot;优衣库&quot;,200,&quot;优衣库，舒适认识&quot;,0));</span><br><span class="line">    brands.add(new Brand(3,&quot;小米&quot;,&quot;小米科技有限公司&quot;,1000,&quot;为发烧而生&quot;,1));</span><br><span class="line"></span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; width=&quot;500&quot; &gt;&lt;!--cellspaceing是单元格之间的空白--&gt;</span><br><span class="line">    &lt;tr align=&quot;center&quot;&gt;</span><br><span class="line">        &lt;th&gt;序号&lt;/th&gt;</span><br><span class="line">        &lt;th&gt;品牌名称&lt;/th&gt;</span><br><span class="line">        &lt;th&gt;企业名称&lt;/th&gt;</span><br><span class="line">        &lt;th&gt;排序&lt;/th&gt;</span><br><span class="line">        &lt;th&gt;品牌介绍&lt;/th&gt;</span><br><span class="line">        &lt;th&gt;状态&lt;/th&gt;</span><br><span class="line">        &lt;th&gt;操作&lt;/th&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">    &lt;%</span><br><span class="line">        for(int i=0;i&lt;brands.size();i++)&#123;</span><br><span class="line">            Brand brand = brands.get(i);</span><br><span class="line">    %&gt;</span><br><span class="line">    &lt;tr align=&quot;center&quot;&gt;</span><br><span class="line">        &lt;td&gt;&lt;%=brand.getId()%&gt;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;%=brand.getBrandName()%&gt;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;%=brand.getCompanyName()%&gt;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;%=brand.getOrdered()%&gt;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;%=brand.getDescription()%&gt;&lt;/td&gt;</span><br><span class="line">        &lt;%</span><br><span class="line">            if(brand.getStatus()==1)&#123;</span><br><span class="line">                //显示对应的启用</span><br><span class="line">        %&gt;</span><br><span class="line">        &lt;td&gt;&lt;%=&quot;启用&quot;%&gt;&lt;/td&gt;</span><br><span class="line">        &lt;%</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">               //显示禁用</span><br><span class="line">        %&gt;</span><br><span class="line">        &lt;td&gt;&lt;%=&quot;禁用&quot;%&gt;&lt;/td&gt;</span><br><span class="line">        &lt;%</span><br><span class="line">            &#125;</span><br><span class="line">        %&gt;</span><br><span class="line">        &lt;td&gt;&lt;a href=&quot;#&quot;&gt;修改&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;删除&lt;/a&gt;&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        &#125;</span><br><span class="line">    %&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>###JSP缺点</p>
+<h3 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式"></a>EL表达式</h3><ul>
+<li>主要功能：获取数据</li>
+<li>语法：<code>$&#123;expression&#125;</code><br><code>$&#123;brands&#125;</code>：获取域中存储的key为brands的数据</li>
+<li>Java web中的四大域对象:<br>1.page:当前页面有效<br>2.request：当前请求有效<br>3.session：当前会话有效<br>4.application：当前应用有效</li>
 </ul>
 
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -686,16 +234,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/07/19/MarkDown%E7%9A%84%E8%AF%AD%E6%B3%95/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/08/31/WEB%E6%A0%B8%E5%BF%83-4-JSP/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2022/08/27/WEB%E6%A0%B8%E5%BF%83-3-Servlet/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">WEB核心-3-Servlet</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -715,155 +322,14 @@
 
 
 
-
-  
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/07/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        <a href="/2022/07/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2022-07-14T16:51:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-15</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这是我的博客</p>
-<h1 id="一些hexo命令"><a href="#一些hexo命令" class="headerlink" title="一些hexo命令"></a>一些hexo命令</h1><p><em>hexo g</em> :生成<br><em>hexo s</em> :开始服务<br><em>hexo d</em> :推送到github上<br><em>hexo n “***”</em> :创建一个名为***的md文件（hexo new）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/07/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/07/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2022/07/15/hello-world/" class="archive-article-date">
-  	<time datetime="2022-07-14T16:45:24.972Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-15</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/07/15/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -896,8 +362,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
