@@ -60,7 +60,7 @@
 			</ul>
 		</nav>
 		<nav>
-   			 总文章数 38
+   			 总文章数 45
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -154,6 +154,560 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-数据库-多表查询" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/10/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/">数据库-多表查询</a>
+    </h1>
+  
+
+        
+        <a href="/2022/08/10/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/" class="archive-article-date">
+  	<time datetime="2022-08-10T10:44:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-10</time>
+</a>
+<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <span id="more"></span>
+
+<h2 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h2><ul>
+<li><p>内连接:相当于查询A B表交集数据<br>–隐式内连接<br><code>select 字段列表 from 表1,表2... where 条件;</code></p>
+<p>– 显式内连接<br><code>select 字段列表 from 表1 [inner] join 表2 on 条件;</code></p>
+</li>
+</ul>
+<p>– 隐式内连接<br><code>select * from empee , dept where empee.dep_id = dept.id;</code></p>
+<p><code>select empee.name, empee.dep_id, dept.addr from empee , dept where empee.dep_id = dept.id;</code></p>
+<p>– 显式内连接<br><code>select * from empee inner join dept on empee.dep_id=dept.id;</code></p>
+<ul>
+<li><p>外连接:</p>
+<ul>
+<li>左外连接<br>  <code>select 字段列表 from 表1 left [outer] join 表2 on 条件;</code><blockquote>
+<p>相当于查询A表所以数据和交集部分数据</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><ul>
+<li>右外连接<br>   <code>select 字段列表 from 表1 right [outer] join 表2 on 条件;</code><blockquote>
+<p>相当于查询B表所以数据和交集部分数据</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h2><p>1.子查询根据查询结果不同，作用不同:</p>
+<ul>
+<li>单行单列:作为条件值，使用&#x3D; !&#x3D; &gt;&lt;等进行条件判断<br><code>SELECT 字段列表 FROM 表 wHERE 字段名 = (子查询);</code></li>
+<li>多行单列:作为条件值，使用in 等关键字进行条件判断<br><code>SELECT 字段列表 FROM 表 wHERE 字段名 in (子查询);</code></li>
+<li>多行多列:作为虚拟表<br><code>SELECT 字段列表 FROM（子查询) WHERE 条件;</code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-- 子查询</span><br><span class="line">-- 单行单列</span><br><span class="line">select * from empee where dep_id = (select id from dept where dep_name = &#x27;研发部&#x27;) ;</span><br><span class="line"></span><br><span class="line">-- 多行单列</span><br><span class="line">select * from empee where dep_id in (select id from dept where dep_name = &#x27;销售部&#x27; or dep_name = &#x27;研发部&#x27;) ;</span><br><span class="line"></span><br><span class="line">-- 多行多列</span><br><span class="line">-- 查询年龄大于等于20 ，并且显示dept表和empee表两张信息</span><br><span class="line">select * from (select * from empee where age &gt;= 20) t1 , dept where t1.dep_id = dept.id ;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/10/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-数据库-数据库设计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/10/%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/">数据库-数据库设计</a>
+    </h1>
+  
+
+        
+        <a href="/2022/08/10/%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/" class="archive-article-date">
+  	<time datetime="2022-08-10T04:42:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-10</time>
+</a>
+<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/10/%E6%95%B0%E6%8D%AE%E5%BA%93-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-数据库-约束" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/10/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BA%A6%E6%9D%9F/">数据库-约束</a>
+    </h1>
+  
+
+        
+        <a href="/2022/08/10/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BA%A6%E6%9D%9F/" class="archive-article-date">
+  	<time datetime="2022-08-10T03:45:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-10</time>
+</a>
+<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>约束分类</strong></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/10/%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BA%A6%E6%9D%9F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-数据库-ddl" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/09/%E6%95%B0%E6%8D%AE%E5%BA%93-ddl/">数据库-ddl</a>
+    </h1>
+  
+
+        
+        <a href="/2022/08/09/%E6%95%B0%E6%8D%AE%E5%BA%93-ddl/" class="archive-article-date">
+  	<time datetime="2022-08-09T12:25:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-09</time>
+</a>
+<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ddl、dml和dml的操作</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/09/%E6%95%B0%E6%8D%AE%E5%BA%93-ddl/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-java-Swing-组装视图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/08/java-Swing-%E7%BB%84%E8%A3%85%E8%A7%86%E5%9B%BE/">java-Swing-组装视图</a>
+    </h1>
+  
+
+        
+        <a href="/2022/08/08/java-Swing-%E7%BB%84%E8%A3%85%E8%A7%86%E5%9B%BE/" class="archive-article-date">
+  	<time datetime="2022-08-08T06:42:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-08</time>
+</a>
+<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br></pre></td><td class="code"><pre><span class="line">package GUISwing;</span><br><span class="line"></span><br><span class="line">import com.sun.org.apache.bcel.internal.generic.IXOR;</span><br><span class="line"></span><br><span class="line">import javax.swing.*;</span><br><span class="line">import java.awt.*;</span><br><span class="line">import java.awt.event.ActionEvent;</span><br><span class="line">import java.awt.event.ActionListener;</span><br><span class="line"></span><br><span class="line">public class SwingComponentDemo &#123;</span><br><span class="line">    JFrame jf=new JFrame(&quot;测试Swing基本组件&quot;);</span><br><span class="line">    //声明菜单相关的组件</span><br><span class="line">    JMenuBar jmb=new JMenuBar();</span><br><span class="line">    JMenu filemenu=new JMenu(&quot;文件&quot;);</span><br><span class="line">    JMenu editmenu=new JMenu(&quot;编辑&quot;);</span><br><span class="line">    JMenuItem auto=new JMenuItem(&quot;自动换行&quot;);</span><br><span class="line">    JMenuItem copy=new JMenuItem(&quot;复制&quot;);</span><br><span class="line">    JMenuItem paste=new JMenuItem(&quot;粘贴&quot;);</span><br><span class="line">    JMenu form=new JMenu(&quot;格式&quot;);</span><br><span class="line">    JMenuItem comment=new JMenuItem(&quot;注释&quot;);</span><br><span class="line">    JMenuItem cancelcomment=new JMenuItem(&quot;取消注释&quot;);</span><br><span class="line"></span><br><span class="line">    //声明文本域</span><br><span class="line">    JTextArea jta=new JTextArea(2,20);</span><br><span class="line"></span><br><span class="line">    //列表框</span><br><span class="line">    JList&lt;String&gt; colorlist=new JList&lt;String&gt;(new String[]&#123;&quot;红色&quot;,&quot;绿色&quot;,&quot;蓝色&quot;&#125;);</span><br><span class="line"></span><br><span class="line">    //选择相关组件</span><br><span class="line">    JComboBox&lt;String&gt; colorselect=new JComboBox&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">    ButtonGroup bg=new ButtonGroup();</span><br><span class="line">    JRadioButton male=new JRadioButton(&quot;男&quot;,false);</span><br><span class="line">    JRadioButton female=new JRadioButton(&quot;女&quot;,true);</span><br><span class="line"></span><br><span class="line">    JCheckBox jcb=new JCheckBox(&quot;是否已婚&quot;,true);</span><br><span class="line"></span><br><span class="line">    //声明底部</span><br><span class="line">    JTextField jtf=new JTextField(40);</span><br><span class="line">    JButton jb=new JButton(&quot;确定&quot;,new ImageIcon(&quot;&quot;));</span><br><span class="line"></span><br><span class="line">    //声明右键菜单</span><br><span class="line">    JPopupMenu jPopupMenu=new JPopupMenu();</span><br><span class="line"></span><br><span class="line">    ButtonGroup popupButton=new ButtonGroup();</span><br><span class="line"></span><br><span class="line">    JRadioButtonMenuItem metal=new JRadioButtonMenuItem(&quot;metal 风格&quot;);</span><br><span class="line">    JRadioButtonMenuItem nimbus=new JRadioButtonMenuItem(&quot;nimbus 风格&quot;);</span><br><span class="line">    JRadioButtonMenuItem windows=new JRadioButtonMenuItem(&quot;windows 风格&quot;,true);</span><br><span class="line">    JRadioButtonMenuItem windowsClassic=new JRadioButtonMenuItem(&quot;windowsClassic 风格&quot;);</span><br><span class="line">    JRadioButtonMenuItem motif=new JRadioButtonMenuItem(&quot;motif 风格&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    private void init()&#123;</span><br><span class="line">        //组装视图</span><br><span class="line"></span><br><span class="line">        //组装底部</span><br><span class="line">        JPanel jPanel=new JPanel();</span><br><span class="line">        jPanel.add(jtf);</span><br><span class="line">        jPanel.add(jb);</span><br><span class="line"></span><br><span class="line">        //jf.add(jPanel);</span><br><span class="line">        //组装选择相关组件</span><br><span class="line">        JPanel selectpanel=new JPanel();</span><br><span class="line">        colorselect.addItem(&quot;红色&quot;);</span><br><span class="line">        colorselect.addItem(&quot;绿色&quot;);</span><br><span class="line">        colorselect.addItem(&quot;蓝色&quot;);</span><br><span class="line">        selectpanel.add(colorselect);</span><br><span class="line">        selectpanel.add(male);</span><br><span class="line">        selectpanel.add(female);</span><br><span class="line">        selectpanel.add(jcb);</span><br><span class="line"></span><br><span class="line">        //组装文本域和选择相关组件</span><br><span class="line">        Box topleft=Box.createVerticalBox();</span><br><span class="line">        topleft.add(jta);</span><br><span class="line">        topleft.add(selectpanel);</span><br><span class="line"></span><br><span class="line">        //组装顶部</span><br><span class="line">        Box top=Box.createHorizontalBox();</span><br><span class="line">        top.add(topleft);</span><br><span class="line">        top.add(colorlist);</span><br><span class="line">        //组装上下</span><br><span class="line">        Box all=Box.createVerticalBox();</span><br><span class="line">        all.add(top);</span><br><span class="line">        all.add(jPanel);</span><br><span class="line">        jf.add(all);</span><br><span class="line"></span><br><span class="line">        //组装顶部菜单</span><br><span class="line">        form.add(comment);</span><br><span class="line">        form.add(cancelcomment);</span><br><span class="line"></span><br><span class="line">        editmenu.add(auto);</span><br><span class="line">        editmenu.addSeparator();</span><br><span class="line">        editmenu.add(copy);</span><br><span class="line">        editmenu.add(paste);</span><br><span class="line">        editmenu.addSeparator();</span><br><span class="line">        editmenu.add(form);</span><br><span class="line"></span><br><span class="line">        jmb.add(filemenu);</span><br><span class="line">        jmb.add(editmenu);</span><br><span class="line">        jf.setJMenuBar(jmb);</span><br><span class="line"></span><br><span class="line">        //组装右键菜单</span><br><span class="line">        popupButton.add(metal);</span><br><span class="line">        popupButton.add(nimbus);</span><br><span class="line">        popupButton.add(windows);</span><br><span class="line">        popupButton.add(windowsClassic);</span><br><span class="line">        popupButton.add(motif);</span><br><span class="line"></span><br><span class="line">        ActionListener actionListener=new ActionListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line">                try &#123;</span><br><span class="line">                    changeFlavor(e.getActionCommand());</span><br><span class="line">                &#125; catch (UnsupportedLookAndFeelException ex) &#123;</span><br><span class="line">                    ex.printStackTrace();</span><br><span class="line">                &#125; catch (ClassNotFoundException ex) &#123;</span><br><span class="line">                    ex.printStackTrace();</span><br><span class="line">                &#125; catch (InstantiationException ex) &#123;</span><br><span class="line">                    ex.printStackTrace();</span><br><span class="line">                &#125; catch (IllegalAccessException ex) &#123;</span><br><span class="line">                    ex.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        metal.addActionListener(actionListener);</span><br><span class="line">        nimbus.addActionListener(actionListener);</span><br><span class="line">        windows.addActionListener(actionListener);</span><br><span class="line">        windowsClassic.addActionListener(actionListener);</span><br><span class="line">        motif.addActionListener(actionListener);</span><br><span class="line"></span><br><span class="line">        jPopupMenu.add(metal);</span><br><span class="line">        jPopupMenu.add(nimbus);</span><br><span class="line">        jPopupMenu.add(windows);</span><br><span class="line">        jPopupMenu.add(windowsClassic);</span><br><span class="line">        jPopupMenu.add(motif);</span><br><span class="line"></span><br><span class="line">        //不需要监听鼠标事件</span><br><span class="line">        jta.setComponentPopupMenu(jPopupMenu);</span><br><span class="line">        //用来关闭</span><br><span class="line">        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br><span class="line">        jf.pack();</span><br><span class="line">        jf.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">//    &quot;metal 风格&quot;);</span><br><span class="line">//    JRadioButtonMenuItem nimbus=new JRadioButtonMenuItem(&quot;nimbus 风格&quot;);</span><br><span class="line">//    JRadioButtonMenuItem windows=new JRadioButtonMenuItem(&quot;windows 风格&quot;,true);</span><br><span class="line">//    JRadioButtonMenuItem windowsClassic=new JRadioButtonMenuItem(&quot;windowsClassic 风格&quot;);</span><br><span class="line">//    JRadioButtonMenuItem motif=new JRadioButtonMenuItem(&quot;motif 风格&quot;)</span><br><span class="line">    private void changeFlavor(String command) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException &#123;</span><br><span class="line">        switch (command)&#123;</span><br><span class="line">            case &quot;metal 风格&quot;:UIManager.setLookAndFeel(&quot;javax.swing.plaf.metal.MetalLookAndFeel&quot;);break;</span><br><span class="line">            case &quot;nimbus 风格&quot;:UIManager.setLookAndFeel(&quot;javax.swing.plaf.nimbus.NimbusLookAndFeel&quot;);break;</span><br><span class="line">            case &quot;windows 风格&quot;:UIManager.setLookAndFeel(&quot;com.sun.java.swing.plaf.windows.WindowsLookAndFeel&quot;);break;</span><br><span class="line">            case &quot;windowsClassic 风格&quot;:UIManager.setLookAndFeel(&quot;com.sun.java.swing.plaf.windows.WindowsLookAndFeel&quot;);break;</span><br><span class="line">            case &quot;motif 风格&quot;:UIManager.setLookAndFeel(&quot;com.sun.java.swing.plaf.motif.MotifLookAndFeel&quot;);break;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //刷新组件外观</span><br><span class="line">        SwingUtilities.updateComponentTreeUI(jf.getContentPane());</span><br><span class="line">        SwingUtilities.updateComponentTreeUI(jmb);</span><br><span class="line">        SwingUtilities.updateComponentTreeUI(jPopupMenu);</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        SwingComponentDemo scd=new SwingComponentDemo();</span><br><span class="line">        scd.init();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/08/java-Swing-%E7%BB%84%E8%A3%85%E8%A7%86%E5%9B%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-java-弹珠弹球游戏" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/08/java-%E5%BC%B9%E7%8F%A0%E5%BC%B9%E7%90%83%E6%B8%B8%E6%88%8F/">java-弹珠弹球游戏</a>
+    </h1>
+  
+
+        
+        <a href="/2022/08/08/java-%E5%BC%B9%E7%8F%A0%E5%BC%B9%E7%90%83%E6%B8%B8%E6%88%8F/" class="archive-article-date">
+  	<time datetime="2022-08-08T06:41:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-08</time>
+</a>
+<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>弹珠弹球</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/08/java-%E5%BC%B9%E7%8F%A0%E5%BC%B9%E7%90%83%E6%B8%B8%E6%88%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-java-绘图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/08/07/java-%E7%BB%98%E5%9B%BE/">java-绘图</a>
+    </h1>
+  
+
+        
+        <a href="/2022/08/07/java-%E7%BB%98%E5%9B%BE/" class="archive-article-date">
+  	<time datetime="2022-08-07T07:57:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-07</time>
+</a>
+<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#绘图</p>
+<table>
+<thead>
+<tr>
+<th>方法名称</th>
+<th>方法功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>setColor(Color c)</td>
+<td>设置颜色</td>
+</tr>
+<tr>
+<td>setEont(Font font)</td>
+<td>设置字体</td>
+</tr>
+<tr>
+<td>drawLine()</td>
+<td>绘制直线</td>
+</tr>
+<tr>
+<td>drawRect()</td>
+<td>绘制矩形</td>
+</tr>
+<tr>
+<td>drawRoundRect()</td>
+<td>绘制圆角矩形</td>
+</tr>
+<tr>
+<td>drawOval()</td>
+<td>绘制椭圆形</td>
+</tr>
+<tr>
+<td>drawPolygon()</td>
+<td>绘制多边形</td>
+</tr>
+<tr>
+<td>drawArc()</td>
+<td>绘制圆弧</td>
+</tr>
+<tr>
+<td>drawPolyline()</td>
+<td>绘制折线</td>
+</tr>
+<tr>
+<td>fillRect()</td>
+<td>填充矩形区域</td>
+</tr>
+<tr>
+<td>fillRoundRect()</td>
+<td>填充圆角矩形区域</td>
+</tr>
+<tr>
+<td>fillOval()</td>
+<td>填充椭圆区域</td>
+</tr>
+<tr>
+<td>fillPolygon()</td>
+<td>填充多边形区域</td>
+</tr>
+<tr>
+<td>fillArc()</td>
+<td>填充圆弧对应的扇形区域</td>
+</tr>
+<tr>
+<td>drawlmage()</td>
+<td>绘制位图</td>
+</tr>
+</tbody></table>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/08/07/java-%E7%BB%98%E5%9B%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-java-awt-菜单" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -413,568 +967,9 @@
 
 
   
-    <article id="post-java-awt-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/06/java-awt-1/">java-awt-1</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/06/java-awt-1/" class="archive-article-date">
-  	<time datetime="2022-08-06T15:59:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-06</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="基础组件"><a href="#基础组件" class="headerlink" title="基础组件"></a>基础组件</h1><ul>
-<li><code>TextArea</code></li>
-<li><code>Choice</code></li>
-<li><code>Checkbox</code></li>
-<li><code>TextField</code></li>
-<li><code>Button</code></li>
-<li><code>List</code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">import javax.swing.*;</span><br><span class="line">import java.awt.*;</span><br><span class="line"></span><br><span class="line">public class BasicComponentDemo &#123;</span><br><span class="line">    Frame f=new Frame(&quot;基础组件测试&quot;);</span><br><span class="line">    TextArea ta=new TextArea(5,20);</span><br><span class="line">    Choice choice=new Choice();</span><br><span class="line">    CheckboxGroup cbg=new CheckboxGroup();</span><br><span class="line">    Checkbox male=new Checkbox(&quot;男性&quot;,cbg,true);</span><br><span class="line">    Checkbox female=new Checkbox(&quot;女性&quot;,cbg,false);</span><br><span class="line">    Checkbox ismerried=new Checkbox(&quot;是否已婚？&quot;);</span><br><span class="line">    TextField tf=new TextField(60);</span><br><span class="line">    Button button=new Button(&quot;确认&quot;);</span><br><span class="line">    List list=new List(6,true);</span><br><span class="line">    public void init()&#123;</span><br><span class="line">        Box bbox=Box.createHorizontalBox();</span><br><span class="line">        bbox.add(tf);</span><br><span class="line">        bbox.add(button);</span><br><span class="line"></span><br><span class="line">        Box cbox=Box.createHorizontalBox();</span><br><span class="line">        choice.add(&quot;1&quot;);</span><br><span class="line">        choice.add(&quot;2&quot;);</span><br><span class="line">        choice.add(&quot;3&quot;);</span><br><span class="line">        cbox.add(choice);</span><br><span class="line">        cbox.add(male);</span><br><span class="line">        cbox.add(female);</span><br><span class="line">        cbox.add(ismerried);</span><br><span class="line"></span><br><span class="line">        Box lbox=Box.createVerticalBox();</span><br><span class="line">        lbox.add(ta);</span><br><span class="line">        lbox.add(cbox);</span><br><span class="line"></span><br><span class="line">        Box top=Box.createHorizontalBox();</span><br><span class="line">        top.add(lbox);</span><br><span class="line">        list.add(&quot;red&quot;);</span><br><span class="line">        list.add(&quot;green&quot;);</span><br><span class="line">        list.add(&quot;blue&quot;);</span><br><span class="line">        top.add(list);</span><br><span class="line"></span><br><span class="line">        Box all=Box.createVerticalBox();</span><br><span class="line">        all.add(top);</span><br><span class="line">        all.add(bbox);</span><br><span class="line"></span><br><span class="line">        f.add(all);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        BasicComponentDemo b=new BasicComponentDemo();</span><br><span class="line">        b.init();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/06/java-awt-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java-awt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/06/java-awt/">java-awt</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/06/java-awt/" class="archive-article-date">
-  	<time datetime="2022-08-06T06:06:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-06</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="awt的常见布局-layout"><a href="#awt的常见布局-layout" class="headerlink" title="awt的常见布局(layout)"></a>awt的常见布局(layout)</h1><ol>
-<li><strong><code>FlowLayout()</code></strong><blockquote>
-<p>从左往右，从上往下排列;</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;</span><br><span class="line">public class FlowlayoutDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame();</span><br><span class="line">        f.setLayout(new FlowLayout(FlowLayout.LEFT,20,20));</span><br><span class="line">        for(int i=0;i&lt;100;i++)&#123;</span><br><span class="line">            f.add(new Button(&quot;按钮&quot;+ i));</span><br><span class="line">        &#125;</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2.<strong><code>BorderLayout()</code></strong></p>
-<blockquote>
-<p>指定是布局在北边(<code>BorderLayout.NORTH</code>)南边(<code>BorderLayout.SOUTH</code>),东边(<code>BorderLayout.EAST</code>),西边(<code>BorderLayout.WEST</code>),中间(<code>BorderLayout.CENTER</code>)</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;</span><br><span class="line"></span><br><span class="line">public class BorderLayoutDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame(&quot;这是一个Borderlayout&quot;);</span><br><span class="line">        f.setLayout(new BorderLayout(30,10));</span><br><span class="line">        f.add(new Button(&quot;北按钮&quot;),BorderLayout.NORTH);</span><br><span class="line">        f.add(new Button(&quot;南按钮&quot;),BorderLayout.SOUTH);</span><br><span class="line">        f.add(new Button(&quot;西按钮&quot;),BorderLayout.WEST);</span><br><span class="line">        f.add(new Button(&quot;东按钮&quot;),BorderLayout.EAST);</span><br><span class="line">        f.add(new Button(&quot;中间按钮&quot;),BorderLayout.CENTER);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>3.<strong><code>GridLayout()</code></strong></p>
-<blockquote>
-<p>网格布局</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;</span><br><span class="line">public class GridLayoutDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame(&quot;实现计算器布局&quot;);</span><br><span class="line">        Panel p1=new Panel();</span><br><span class="line">        p1.add(new TextField(30));</span><br><span class="line">        f.add(p1,BorderLayout.NORTH);</span><br><span class="line">        Panel p2=new Panel(new GridLayout(3,5,4,4));</span><br><span class="line">        for(int i=0;i&lt;10;i++)&#123;</span><br><span class="line">            p2.add(new Button(String.valueOf(i)));</span><br><span class="line">        &#125;</span><br><span class="line">        p2.add(new Button(&quot;+&quot;));</span><br><span class="line">        p2.add(new Button(&quot;-&quot;));</span><br><span class="line">        p2.add(new Button(&quot;*&quot;));</span><br><span class="line">        p2.add(new Button(&quot;/&quot;));</span><br><span class="line">        p2.add(new Button(&quot;%&quot;));</span><br><span class="line">        f.add(p2);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>4.<strong><code>CardLayout()</code></strong></p>
-<blockquote>
-<p>像卡片一样布局，所以即便添加了多个组件，也只会展现一个组件。通过<code>previous()</code>、<code>next()</code>等方法来进行组件展示的切换</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">import java.awt.*;</span><br><span class="line">import java.awt.event.ActionEvent;</span><br><span class="line">import java.awt.event.ActionListener;</span><br><span class="line"></span><br><span class="line">public class CardLayoutAndBindDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame(&quot;这是CardLayout和事件绑定&quot;);</span><br><span class="line">        Panel p1=new Panel();</span><br><span class="line">        CardLayout c=new CardLayout();</span><br><span class="line">        p1.setLayout(c);</span><br><span class="line">        String[] name=&#123;&quot;第一张&quot;,&quot;第二张&quot;,&quot;第三张&quot;,&quot;第四张&quot;,&quot;第五张&quot;&#125;;</span><br><span class="line">        for(int i=0;i&lt;5;i++)&#123;</span><br><span class="line">            p1.add(name[i],new Button(name[i]));</span><br><span class="line">        &#125;</span><br><span class="line">        f.add(p1);</span><br><span class="line">        Panel p2=new Panel();</span><br><span class="line">        Button b1=new Button(&quot;上一张&quot;);</span><br><span class="line">        Button b2=new Button(&quot;下一张&quot;);</span><br><span class="line">        Button b3=new Button(&quot;第一张&quot;);</span><br><span class="line">        Button b4=new Button(&quot;最后一张&quot;);</span><br><span class="line">        Button b5=new Button(&quot;第三张&quot;);</span><br><span class="line">        ActionListener al=new ActionListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void actionPerformed(ActionEvent e) &#123;</span><br><span class="line">                String ac=e.getActionCommand();</span><br><span class="line">                switch(ac)&#123;</span><br><span class="line">                    case &quot;上一张&quot;:c.previous(p1);break;</span><br><span class="line">                    case &quot;下一张&quot;:c.next(p1);break;</span><br><span class="line">                    case &quot;第一张&quot;:c.first(p1);break;</span><br><span class="line">                    case &quot;最后一张&quot;:c.last(p1);break;</span><br><span class="line">                    case &quot;第三张&quot;:c.show(p1,&quot;第三张&quot;);break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        b1.addActionListener(al);</span><br><span class="line">        b2.addActionListener(al);</span><br><span class="line">        b3.addActionListener(al);</span><br><span class="line">        b4.addActionListener(al);</span><br><span class="line">        b5.addActionListener(al);</span><br><span class="line">        p2.add(b1);</span><br><span class="line">        p2.add(b2);</span><br><span class="line">        p2.add(b3);</span><br><span class="line">        p2.add(b4);</span><br><span class="line">        p2.add(b5);</span><br><span class="line">        f.add(p2,BorderLayout.SOUTH);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>5.<strong><code>BoxLayout()</code></strong></p>
-<blockquote>
-<p>可以实现盒子摆放，在这个盒子里有上下布局，也有左右布局</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import javax.swing.*;</span><br><span class="line">import java.awt.*;</span><br><span class="line">public class BoxLayoutDemo2 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Frame f=new Frame();</span><br><span class="line">        Box hbox= Box.createHorizontalBox();</span><br><span class="line">        hbox.add(new Button(&quot;button1&quot;));</span><br><span class="line">        hbox.add(Box.createHorizontalGlue());</span><br><span class="line">        hbox.add(new Button(&quot;button2&quot;));</span><br><span class="line">        Box vbox=Box.createVerticalBox();</span><br><span class="line">        vbox.add(new Button(&quot;button3&quot;));</span><br><span class="line">        vbox.add(Box.createVerticalStrut(40));</span><br><span class="line">        vbox.add(new Button(&quot;button4&quot;));</span><br><span class="line">        f.add(hbox,BorderLayout.NORTH);</span><br><span class="line">        f.add(vbox);</span><br><span class="line">        f.pack();</span><br><span class="line">        f.setVisible(true);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/06/java-awt/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java-反射" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/06/java-%E5%8F%8D%E5%B0%84/">java-反射</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/06/java-%E5%8F%8D%E5%B0%84/" class="archive-article-date">
-  	<time datetime="2022-08-05T16:02:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-06</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><h2 id="首先一定要建立一定的映射关系如Class-c-Class-forName-quot-ReflectDemo-quot"><a href="#首先一定要建立一定的映射关系如Class-c-Class-forName-quot-ReflectDemo-quot" class="headerlink" title="首先一定要建立一定的映射关系如Class c=Class.forName(&quot;ReflectDemo&quot;);"></a>首先一定要建立一定的映射关系如<code>Class c=Class.forName(&quot;ReflectDemo&quot;);</code></h2><ol>
-<li><strong>反射获取构造方法</strong><blockquote>
-<p><code>Class</code>类里的<code>getConstructors()</code>和<code>getDeclaredConstructors()</code>第一个获取公共，第二个获取全部构造方法<br>去掉s可以获得单个<br>使用<code>newInstance()</code>可以产生实例对象</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import java.lang.reflect.Constructor;</span><br><span class="line">import java.lang.reflect.InvocationTargetException;</span><br><span class="line">public class ConsructorDemo &#123;</span><br><span class="line">    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException &#123;</span><br><span class="line">        Class&lt;?&gt; c=Class.forName(&quot;ReflectDemo.Student&quot;);</span><br><span class="line">        Constructor&lt;?&gt; con=c.getConstructor(String.class,int.class,String.class);</span><br><span class="line">        Object obj=con.newInstance(&quot;林青霞&quot;,60,&quot;2000920008&quot;);</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><strong>反射获取成员变量</strong><blockquote>
-<p>类似第一，看代码找不同</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class MemberVariableDemo &#123;</span><br><span class="line">    public static void main(String[] args) throws ClassNotFoundException, NoSuchFieldException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException &#123;</span><br><span class="line">        Class&lt;?&gt; c=Class.forName(&quot;ReflectDemo.Student&quot;);</span><br><span class="line">        Field[] fields=c.getDeclaredFields();</span><br><span class="line">        for(Field f:fields)&#123;</span><br><span class="line">            System.out.println(f);</span><br><span class="line">        &#125;</span><br><span class="line">        Field field=c.getDeclaredField(&quot;num&quot;);</span><br><span class="line">        field.setAccessible(true);//取消访问检测，使得私有成员变量也能反射</span><br><span class="line">        Object obj=c.getConstructor().newInstance();</span><br><span class="line">        field.set(obj,&quot;20009200227&quot;);</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><strong>反射获取方法</strong><blockquote>
-<p>类似</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import java.lang.reflect.InvocationTargetException;</span><br><span class="line">import java.lang.reflect.Method;</span><br><span class="line">public class MemberMethodDemo &#123;</span><br><span class="line">    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException &#123;</span><br><span class="line">        Class&lt;?&gt; c=Class.forName(&quot;ReflectDemo.Student&quot;);</span><br><span class="line">        Method[] m=c.getDeclaredMethods();//getDeclaredMethods()将为继承的类的成员方法都列举出来，getMethods()是将公有方法列举出来</span><br><span class="line">        for(Method me:m)&#123;</span><br><span class="line">            System.out.println(me);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;-----------&quot;);</span><br><span class="line">        Method method=c.getDeclaredMethod(&quot;getName&quot;);</span><br><span class="line">        Object obj=c.getConstructor().newInstance();</span><br><span class="line">        method.setAccessible(true);//取消访问检测，使得私有成员方法也能反射</span><br><span class="line">        method.invoke(obj);//Object invoke(Object obj, Object... args) </span><br><span class="line">        //在具有指定参数的 方法对象上调用此 方法对象表示的底层方法。</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><strong>通过包装反射来使用，仅仅修改Class.txt来达到使用不同类方法的效果</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import java.io.File;</span><br><span class="line">import java.io.FileNotFoundException;</span><br><span class="line">import java.io.FileReader;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.lang.reflect.Constructor;</span><br><span class="line">import java.lang.reflect.InvocationTargetException;</span><br><span class="line">import java.lang.reflect.Method;</span><br><span class="line">import java.util.Properties;</span><br><span class="line">public class PackUpRefDemo &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException &#123;</span><br><span class="line">        Properties p=new Properties();</span><br><span class="line">        FileReader fr=new FileReader(&quot;D:\\Ideacode\\Try\\src\\ReflectDemo\\Class.txt&quot;);</span><br><span class="line">        p.load(fr);</span><br><span class="line">        fr.close();</span><br><span class="line">        //System.out.println(p.getProperty(&quot;classname&quot;));</span><br><span class="line">        String classname=p.getProperty(&quot;classname&quot;);</span><br><span class="line">        //System.out.println(classname);</span><br><span class="line">        String method=p.getProperty(&quot;method&quot;);</span><br><span class="line">        Class&lt;?&gt; c=Class.forName(classname);</span><br><span class="line">        Constructor&lt;?&gt; con=c.getConstructor();</span><br><span class="line">        Object obj=con.newInstance();</span><br><span class="line">        Method m=c.getMethod(method);</span><br><span class="line">        m.invoke(obj);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Class.txt文件内容：</p>
-<blockquote>
-<p>classname&#x3D;ReflectDemo.Student<br>method&#x3D;study</p>
-</blockquote>
-</blockquote>
-</li>
-</ol>
-<blockquote>
-<p>而Student类和Teacher类分别有study和teach方法</p>
-</blockquote>
-<blockquote>
-<p><code>public void study()&#123;         System.out.println(&quot;好好学习天天向上&quot;);     &#125;</code></p>
-</blockquote>
-<blockquote>
-<p><code>public void teach()&#123;         System.out.println(&quot;立德树人&quot;);     &#125;    </code></p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/06/java-%E5%8F%8D%E5%B0%84/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Stream流的收集操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/04/Stream%E6%B5%81%E7%9A%84%E6%94%B6%E9%9B%86%E6%93%8D%E4%BD%9C/">Stream流的收集操作</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/04/Stream%E6%B5%81%E7%9A%84%E6%94%B6%E9%9B%86%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2022-08-03T16:16:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-04</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Stream的收集"><a href="#Stream的收集" class="headerlink" title="Stream的收集"></a>Stream的收集</h1><blockquote>
-<p>通过Stream里的collect接口的Collectors.toList()来将流转换为列表,当然有<code>toSet()</code>,<code>toMap</code></p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.stream.Collectors;</span><br><span class="line">import java.util.stream.Stream;</span><br><span class="line">public class StreamDemo5 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        List&lt;String&gt; list=new ArrayList&lt;String&gt;();</span><br><span class="line">        list.add(&quot;林青霄&quot;);</span><br><span class="line">        list.add(&quot;张曼玉&quot;);</span><br><span class="line">        list.add(&quot;张伟&quot;);</span><br><span class="line">        list.add(&quot;张三&quot;);</span><br><span class="line">        list.add(&quot;魏忠贤&quot;);</span><br><span class="line">        list.add(&quot;刘德华&quot;);</span><br><span class="line">        Stream&lt;String&gt; ss=list.stream().filter(s-&gt;s.length()==3);</span><br><span class="line">        List&lt;String&gt; ls=ss.collect(Collectors.toList());</span><br><span class="line">        for(String s:ls)&#123;</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/04/Stream%E6%B5%81%E7%9A%84%E6%94%B6%E9%9B%86%E6%93%8D%E4%BD%9C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java-stream流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/03/java-stream%E6%B5%81/">java-stream流</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/03/java-stream%E6%B5%81/" class="archive-article-date">
-  	<time datetime="2022-08-03T11:41:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="stream流分为3部分"><a href="#stream流分为3部分" class="headerlink" title="stream流分为3部分"></a>stream流分为3部分</h1><blockquote>
-<p>分别为开源流(<code>.stream()</code>)、过滤流(<code>.fliter(lambda表达式的方程式接口)</code>)、结尾(<code>forEach()</code>)</p>
-</blockquote>
-<h2 id="Stream流常见生成方式"><a href="#Stream流常见生成方式" class="headerlink" title="Stream流常见生成方式"></a>Stream流常见生成方式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class StreamDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        //Colletion用默认stream()方法生成</span><br><span class="line">        List&lt;String&gt; list=new ArrayList&lt;String&gt;();</span><br><span class="line">        Stream&lt;String&gt; sl=list.stream();</span><br><span class="line"></span><br><span class="line">        Set&lt;String&gt; set=new HashSet&lt;&gt;();</span><br><span class="line">        Stream&lt;String&gt; ss=set.stream();</span><br><span class="line"></span><br><span class="line">        //Map体系间接生成流</span><br><span class="line">        Map&lt;String,Integer&gt; map=new HashMap&lt;String,Integer&gt;();</span><br><span class="line">        Stream&lt;String&gt; sms=map.keySet().stream();</span><br><span class="line">        Stream&lt;Integer&gt; smi=map.values().stream();</span><br><span class="line">        Stream&lt;Map.Entry&lt;String,Integer&gt;&gt; sm=map.entrySet().stream();</span><br><span class="line"></span><br><span class="line">        //数值用Stream接口的静态方法生成</span><br><span class="line">        String[] as=&#123;&quot;hello&quot;,&quot;world&quot;&#125;;</span><br><span class="line">        Stream&lt;String&gt; sss=Stream.of(as);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/03/java-stream%E6%B5%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-java-四大函数式接口" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/03/java-%E5%9B%9B%E5%A4%A7%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/">java-四大函数式接口</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/03/java-%E5%9B%9B%E5%A4%A7%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/" class="archive-article-date">
-  	<time datetime="2022-08-03T10:14:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Supplier-lt-T-gt"><a href="#Supplier-lt-T-gt" class="headerlink" title="Supplier&lt;T&gt;"></a>Supplier&lt;T&gt;</h1><p><em>方法：<code>get()</code></em></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.function.Supplier;</span><br><span class="line"></span><br><span class="line">public class SupplierDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        System.out.println(getString(()-&gt;&#123;return &quot;帅哥&quot;;&#125;));</span><br><span class="line">    &#125;</span><br><span class="line">    private static String getString(Supplier&lt;String&gt; s)&#123;</span><br><span class="line">        return s.get();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="Consumer-lt-T-gt"><a href="#Consumer-lt-T-gt" class="headerlink" title="Consumer&lt;T&gt;"></a>Consumer&lt;T&gt;</h1><p><strong>方法：</strong> </p>
-<ul>
-<li>void  <code>accept(T t)</code><br>对给定的参数执行此操作。  </li>
-<li>default   Consumer<T> <code>andThen(Consumer&lt;? super T&gt; after)</code><br>返回一个组合的 Consumer ，按顺序执行该操作，然后执行 after操作。  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.function.Consumer;</span><br><span class="line">public class ComsumerDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        opconsumer(&quot;林青霞&quot;,(s)-&gt;&#123;System.out.println(s);&#125;,(s)-&gt;&#123;</span><br><span class="line">            System.out.println(new StringBuilder(s).reverse().toString());</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    private static void opconsumer(String s, Consumer&lt;String&gt; c1,Consumer&lt;String&gt; c2)&#123;</span><br><span class="line">        c1.andThen(c2).accept(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class ConsumerDemo2 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        String[] s=&#123;&quot;喜羊羊,21&quot;,&quot;美丽哥,23&quot;&#125;;</span><br><span class="line">        Split(s,(ss)-&gt;&#123;</span><br><span class="line">            System.out.print(ss.split(&quot;,&quot;)[0]);</span><br><span class="line">        &#125;,(ss)-&gt;&#123;</span><br><span class="line">            System.out.println(&quot;,年龄是&quot;+ss.split(&quot;,&quot;)[1]);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    private static void Split(String[] s, Consumer&lt;String&gt; c1,Consumer&lt;String&gt; c2)&#123;</span><br><span class="line">        for(String ss:s)&#123;</span><br><span class="line">            c1.andThen(c2).accept(ss);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></T></li>
-</ul>
-<hr>
-<h1 id="Predicate-lt-T-gt"><a href="#Predicate-lt-T-gt" class="headerlink" title="Predicate&lt;T&gt;"></a>Predicate&lt;T&gt;</h1><p><del>方法：</del></p>
-<ul>
-<li>default Predicate<T> <code>and</code>(Predicate&lt;? super T&gt; other)<br>返回一个组合的谓词，表示该谓词与另一个谓词的短路逻辑AND。<br>static <T> Predicate<T> <code>isEqual</code>(Object targetRef)<br>返回根据 Objects.equals(Object, Object)测试两个参数是否相等的 谓词 。  </T></T></T></li>
-<li>default Predicate<T> <code>negate</code>()<br>返回表示此谓词的逻辑否定的谓词。  </T></li>
-<li>default Predicate<T> or(Predicate&lt;? super T&gt; other)<br>返回一个组合的谓词，表示该谓词与另一个谓词的短路逻辑或。  </T></li>
-<li>boolean <code>test</code>(T t)<br>在给定的参数上评估这个谓词。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import java.util.function.Predicate;</span><br><span class="line">public class PredicateDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        System.out.println(Pr(&quot;helloworld&quot;,(s)-&gt;&#123;return s.length()&gt;8;&#125;,(s)-&gt;&#123;return s.length()&lt;15;&#125;));</span><br><span class="line">    &#125;</span><br><span class="line">    private static Boolean Pr(String s, Predicate&lt;String&gt; p1,Predicate&lt;String&gt; p2)&#123;</span><br><span class="line">        return p1.and(p2).test(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="Function-lt-T-R-gt"><a href="#Function-lt-T-R-gt" class="headerlink" title="Function&lt;T,R&gt;"></a>Function&lt;T,R&gt;</h1><blockquote>
-<p>T - 函数输入的类型 R - 函数的结果类型 </p>
-</blockquote>
-<ul>
-<li>default <V> Function&lt;T,V&gt; <code>andThen</code>(Function&lt;? super R,? extends V&gt; after)<br>返回一个组合函数，首先将该函数应用于其输入，然后将 after函数应用于结果。  </V></li>
-<li>R <code>apply</code>(T t)<br>将此函数应用于给定的参数。  </li>
-<li>default <V> Function&lt;V,R&gt; <code>compose</code>(Function&lt;? super V,? extends T&gt; before)<br>返回一个组合函数，首先将 before函数应用于其输入，然后将此函数应用于结果。  </V></li>
-<li>static <T> Function&lt;T,T&gt; <code>identity</code>()<br>返回一个总是返回其输入参数的函数。  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import java.util.function.Function;</span><br><span class="line">public class FunctionDemo &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Fun(&quot;100&quot;,s -&gt;&#123;return Integer.parseInt(s); &#125;,s-&gt;&#123;return String.valueOf(s+566);&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    private static void Fun(String s, Function&lt;String , Integer&gt; f1,Function&lt;Integer,String&gt; f2)&#123;</span><br><span class="line">        System.out.println(f1.andThen(f2).apply(s));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></T></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/03/java-%E5%9B%9B%E5%A4%A7%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-lambda表达式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/08/03/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">lambda表达式</a>
-    </h1>
-  
-
-        
-        <a href="/2022/08/03/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2022-08-02T16:56:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
-</a>
-<span id="busuanzi_container_page_pv">  本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a><code>lambda</code>表达式</h1><ul>
-<li>形式：</li>
-<li><strong>()-&gt;{}</strong></li>
-</ul>
-<p><em>第一个小括号的参数，第二个大括号是代码块</em></p>
-<h1 id="Demo1"><a href="#Demo1" class="headerlink" title="Demo1"></a>Demo1</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class Demo1 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        shui(() -&gt; &#123;</span><br><span class="line">            System.out.println(&quot;hello,world&quot;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    private  static void shui(Demo1interface d)&#123;</span><br><span class="line">        d.eat();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface Demo1interface &#123;</span><br><span class="line">    void eat();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="Demo3"><a href="#Demo3" class="headerlink" title="Demo3"></a>Demo3</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Demo3 &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        addd((int x,int y)-&gt;&#123;</span><br><span class="line">            return x - y;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    private static void addd(Demo3in d)&#123;</span><br><span class="line"></span><br><span class="line">        System.out.println(d.add(55,60));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface Demo3in &#123;</span><br><span class="line">    int add(int x,int y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>说明：</p>
-<blockquote>
-<p>lamda表达式一定要有对应的接口，而lamda表达式的大括号代码块才是具体实现的功能，如demo3里的，命名为add接口，但是<code>return</code>是x-y,所以答案应该是-5</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/08/03/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -986,7 +981,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 土块一个
+    		&copy; 2023 土块一个
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
